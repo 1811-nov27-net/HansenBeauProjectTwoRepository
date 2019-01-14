@@ -38,6 +38,7 @@
       <x:String>Newtonsoft.Json.Linq</x:String>
       <x:String>Newtonsoft.Json</x:String>
       <x:String>System.Xml.Serialization</x:String>
+      <x:String>Microsoft.VisualBasic.CompilerServices</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -75,7 +76,7 @@
       <Variable x:TypeArguments="sd:DataTable" Name="dt_Address" />
     </Flowchart.Variables>
     <Flowchart.StartNode>
-      <FlowStep x:Name="__ReferenceID6" sap2010:WorkflowViewState.IdRef="FlowStep_7">
+      <FlowStep x:Name="__ReferenceID8" sap2010:WorkflowViewState.IdRef="FlowStep_7">
         <Flowchart DisplayName="Read/ Store Config.txt" sap2010:WorkflowViewState.IdRef="Flowchart_1">
           <Flowchart.Variables>
             <Variable x:TypeArguments="x:String" Name="configParams" />
@@ -121,58 +122,53 @@
           <x:Reference>__ReferenceID3</x:Reference>
         </Flowchart>
         <FlowStep.Next>
-          <FlowStep x:Name="__ReferenceID8" sap2010:WorkflowViewState.IdRef="FlowStep_6">
+          <FlowStep x:Name="__ReferenceID10" sap2010:WorkflowViewState.IdRef="FlowStep_6">
             <Flowchart DisplayName="Read/ Store Product Details" sap2010:WorkflowViewState.IdRef="Flowchart_2">
               <Flowchart.StartNode>
-                <FlowStep x:Name="__ReferenceID4">
-                  <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope - select Order Products.xlsx" WorkbookPath="Accessory Files\Orders.xlsx">
+                <FlowStep x:Name="__ReferenceID4" sap2010:WorkflowViewState.IdRef="FlowStep_14">
+                  <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope - select Order Products.xlsx" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" WorkbookPath="Accessory Files\Orders.xlsx">
                     <ui:ExcelApplicationScope.Body>
                       <ActivityAction x:TypeArguments="ui:WorkbookApplication">
                         <ActivityAction.Argument>
                           <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
                         </ActivityAction.Argument>
-                        <Sequence DisplayName="Do">
-                          <ui:ExcelReadRange AddHeaders="True" DataTable="[dt_Orders]" DisplayName="Read Range" SheetName="Orders">
+                        <Sequence DisplayName="Do" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                          <ui:ExcelReadRange AddHeaders="True" DataTable="[dt_Orders]" DisplayName="Read Range - Orders =&gt; dt_Orders" sap2010:WorkflowViewState.IdRef="ExcelReadRange_1" SheetName="Orders">
                             <ui:ExcelReadRange.Range>
                               <InArgument x:TypeArguments="x:String">
                                 <Literal x:TypeArguments="x:String" Value="" />
                               </InArgument>
                             </ui:ExcelReadRange.Range>
-                            <sap2010:WorkflowViewState.IdRef>ExcelReadRange_1</sap2010:WorkflowViewState.IdRef>
                           </ui:ExcelReadRange>
-                          <ui:ExcelReadRange AddHeaders="True" DataTable="[dt_Address]" DisplayName="Read Range" SheetName="Address">
+                          <ui:ExcelReadRange AddHeaders="True" DataTable="[dt_Address]" DisplayName="Read Range - Address =&gt; dt_Address" sap2010:WorkflowViewState.IdRef="ExcelReadRange_2" SheetName="Address">
                             <ui:ExcelReadRange.Range>
                               <InArgument x:TypeArguments="x:String">
                                 <Literal x:TypeArguments="x:String" Value="" />
                               </InArgument>
                             </ui:ExcelReadRange.Range>
-                            <sap2010:WorkflowViewState.IdRef>ExcelReadRange_2</sap2010:WorkflowViewState.IdRef>
                           </ui:ExcelReadRange>
-                          <sap2010:WorkflowViewState.IdRef>Sequence_5</sap2010:WorkflowViewState.IdRef>
                         </Sequence>
                       </ActivityAction>
                     </ui:ExcelApplicationScope.Body>
-                    <sap2010:WorkflowViewState.IdRef>ExcelApplicationScope_1</sap2010:WorkflowViewState.IdRef>
                   </ui:ExcelApplicationScope>
-                  <sap2010:WorkflowViewState.IdRef>FlowStep_14</sap2010:WorkflowViewState.IdRef>
                 </FlowStep>
               </Flowchart.StartNode>
               <x:Reference>__ReferenceID4</x:Reference>
             </Flowchart>
             <FlowStep.Next>
-              <FlowStep x:Name="__ReferenceID7" sap2010:WorkflowViewState.IdRef="FlowStep_5">
+              <FlowStep x:Name="__ReferenceID9" sap2010:WorkflowViewState.IdRef="FlowStep_5">
                 <Flowchart DisplayName="Login to Pega" sap2010:WorkflowViewState.IdRef="Flowchart_3">
                   <Flowchart.StartNode>
-                    <FlowStep x:Name="__ReferenceID5" sap2010:WorkflowViewState.IdRef="FlowStep_13">
-                      <Sequence DisplayName="Login Recording" sap2010:WorkflowViewState.IdRef="Sequence_4">
-                        <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="IE" DisplayName="Attach Browser 'SignInPeg Page'" sap2010:WorkflowViewState.IdRef="BrowserScope_2" InformativeScreenshot="38f5ce7089a2473ef3f00cd94aea1778" Selector="&lt;html title='Sign In | Pega Studio Training Web Application' /&gt;">
+                    <FlowStep x:Name="__ReferenceID5" sap2010:WorkflowViewState.IdRef="FlowStep_17">
+                      <Sequence DisplayName="Login Recording" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                        <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="IE" DisplayName="Attach Browser 'SignInPeg Page'" sap2010:WorkflowViewState.IdRef="BrowserScope_4" InformativeScreenshot="bed630c9a015310301e51418d14ee435" Selector="&lt;html title='Sign In | Pega Studio Training Web Application' /&gt;">
                           <ui:BrowserScope.Body>
                             <ActivityAction x:TypeArguments="x:Object">
                               <ActivityAction.Argument>
                                 <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
                               </ActivityAction.Argument>
-                              <Sequence DisplayName="Do" sap2010:WorkflowViewState.IdRef="Sequence_3">
-                                <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'INPUT  user_name'" sap2010:WorkflowViewState.IdRef="Click_3" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+                              <Sequence DisplayName="Do" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                                <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'INPUT  user_name'" sap2010:WorkflowViewState.IdRef="Click_9" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
                                   <ui:Click.CursorPosition>
                                     <ui:CursorPosition Position="Center">
                                       <ui:CursorPosition.OffsetX>
@@ -187,22 +183,22 @@
                                     <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="6792edb243f2f4c6bda4ea6c580998d9" Selector="&lt;webctrl id='user_name' tag='INPUT' /&gt;" WaitForReady="INTERACTIVE" />
                                   </ui:Click.Target>
                                 </ui:Click>
-                                <ui:TypeInto DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Type Into 'INPUT  user_name'" EmptyField="True" sap2010:WorkflowViewState.IdRef="TypeInto_3" SendWindowMessages="False" SimulateType="True" Text="[username]">
+                                <ui:TypeInto DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Type Into 'INPUT  user_name'" EmptyField="True" sap2010:WorkflowViewState.IdRef="TypeInto_5" SendWindowMessages="False" SimulateType="True" Text="[username]">
                                   <ui:TypeInto.Target>
                                     <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="57868a7d45e5ed7187f8e7fedc2f9eaa" Selector="&lt;webctrl id='user_name' tag='INPUT' /&gt;" WaitForReady="COMPLETE" />
                                   </ui:TypeInto.Target>
                                 </ui:TypeInto>
-                                <ui:SendHotkey DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Send Hotkey" EmptyField="False" sap2010:WorkflowViewState.IdRef="SendHotkey_2" Key="tab" KeyModifiers="None" SendWindowMessages="False" SpecialKey="True">
+                                <ui:SendHotkey DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Send Hotkey" EmptyField="False" sap2010:WorkflowViewState.IdRef="SendHotkey_3" Key="tab" KeyModifiers="None" SendWindowMessages="False" SpecialKey="True">
                                   <ui:SendHotkey.Target>
                                     <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" WaitForReady="INTERACTIVE" />
                                   </ui:SendHotkey.Target>
                                 </ui:SendHotkey>
-                                <ui:TypeInto DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Type Into 'INPUT  user_pass'" EmptyField="True" sap2010:WorkflowViewState.IdRef="TypeInto_4" SendWindowMessages="False" SimulateType="True" Text="[password]">
+                                <ui:TypeInto DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Type Into 'INPUT  user_pass'" EmptyField="True" sap2010:WorkflowViewState.IdRef="TypeInto_6" SendWindowMessages="False" SimulateType="True" Text="[password]">
                                   <ui:TypeInto.Target>
                                     <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="6bba725736122c8c5fbb990e4fda3e78" Selector="&lt;webctrl id='user_pass' tag='INPUT' /&gt;" WaitForReady="COMPLETE" />
                                   </ui:TypeInto.Target>
                                 </ui:TypeInto>
-                                <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'INPUT  login_button'" sap2010:WorkflowViewState.IdRef="Click_4" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
+                                <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'INPUT  login_button'" sap2010:WorkflowViewState.IdRef="Click_10" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
                                   <ui:Click.CursorPosition>
                                     <ui:CursorPosition OffsetX="44" OffsetY="16" Position="TopLeft" />
                                   </ui:Click.CursorPosition>
@@ -220,16 +216,110 @@
                   <x:Reference>__ReferenceID5</x:Reference>
                 </Flowchart>
                 <FlowStep.Next>
-                  <FlowStep x:Name="__ReferenceID9" sap2010:WorkflowViewState.IdRef="FlowStep_4">
-                    <Flowchart DisplayName="Place Orders to Pega" sap2010:WorkflowViewState.IdRef="Flowchart_4" StartNode="{x:Null}" />
+                  <FlowStep x:Name="__ReferenceID11" sap2010:WorkflowViewState.IdRef="FlowStep_4">
+                    <Flowchart DisplayName="Place Orders to Pega" sap2010:WorkflowViewState.IdRef="Flowchart_4">
+                      <Flowchart.StartNode>
+                        <FlowStep x:Name="__ReferenceID7" sap2010:WorkflowViewState.IdRef="FlowStep_16">
+                          <Sequence DisplayName="Clear Cart (unfinished)" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                            <Sequence.Variables>
+                              <Variable x:TypeArguments="ui:UiElement" Name="Td" />
+                              <Variable x:TypeArguments="ui:UiElement" Name="Td1" />
+                            </Sequence.Variables>
+                            <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="IE" DisplayName="Attach Browser 'HomePegaS Page'" sap2010:WorkflowViewState.IdRef="BrowserScope_3" InformativeScreenshot="2ae99a80563ee3899f1cba388c79c4df" Selector="&lt;html title='Home | Pega Studio Training Web Application' /&gt;">
+                              <ui:BrowserScope.Body>
+                                <ActivityAction x:TypeArguments="x:Object">
+                                  <ActivityAction.Argument>
+                                    <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+                                  </ActivityAction.Argument>
+                                  <Sequence DisplayName="Do" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                                    <Sequence.Variables>
+                                      <Variable x:TypeArguments="x:Boolean" Name="DWCondition" />
+                                      <Variable x:TypeArguments="ui:GenericValue" Name="textBtn" />
+                                    </Sequence.Variables>
+                                    <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'IMG '" sap2010:WorkflowViewState.IdRef="Click_5" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
+                                      <ui:Click.CursorPosition>
+                                        <ui:CursorPosition OffsetX="13" OffsetY="9" Position="TopLeft" />
+                                      </ui:Click.CursorPosition>
+                                      <ui:Click.Target>
+                                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="1f74a76a22e4e32a021e2c7a66d8ab60" Selector="&lt;webctrl parentid='cart_menu' tag='IMG' /&gt;" WaitForReady="COMPLETE" />
+                                      </ui:Click.Target>
+                                    </ui:Click>
+                                    <DoWhile DisplayName="Do While" sap2010:WorkflowViewState.IdRef="DoWhile_1" Condition="[textBtn.ToLower = &quot;next&quot;]">
+                                      <Sequence sap2010:WorkflowViewState.IdRef="Sequence_15">
+                                        <ui:AnchorBase AnchorPosition="Auto" DisplayName="Anchor Base" sap2010:WorkflowViewState.IdRef="AnchorBase_1">
+                                          <ui:AnchorBase.Action>
+                                            <ActivityAction x:TypeArguments="ui:Anchor">
+                                              <ActivityAction.Argument>
+                                                <DelegateInArgument x:TypeArguments="ui:Anchor" Name="ContextAnchor" />
+                                              </ActivityAction.Argument>
+                                              <ui:GetAttribute ContinueOnError="{x:Null}" Attribute="outerHtml" DisplayName="Get Attribute 'INPUT  next1_button'" sap2010:WorkflowViewState.IdRef="GetAttribute_3">
+                                                <ui:GetAttribute.Result>
+                                                  <OutArgument x:TypeArguments="ui:GenericValue">[textBtn]</OutArgument>
+                                                </ui:GetAttribute.Result>
+                                                <ui:GetAttribute.Target>
+                                                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="14c617a5e07bcbedc035ce8b1905829f" Selector="&lt;webctrl tag='INPUT' /&gt;" TimeoutMS="5000" WaitForReady="INTERACTIVE" />
+                                                </ui:GetAttribute.Target>
+                                              </ui:GetAttribute>
+                                            </ActivityAction>
+                                          </ui:AnchorBase.Action>
+                                          <ui:AnchorBase.AnchorProvider>
+                                            <ui:WaitUiElementAppear FoundElement="{x:Null}" DisplayName="Find Element 'INPUT  login_button'" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_5" WaitActive="False" WaitVisible="False">
+                                              <ui:WaitUiElementAppear.Target>
+                                                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="4c8bb077ae7fef2d0792f307a410b93d" Selector="&lt;webctrl id='*' tag='INPUT' /&gt;" WaitForReady="INTERACTIVE" />
+                                              </ui:WaitUiElementAppear.Target>
+                                            </ui:WaitUiElementAppear>
+                                          </ui:AnchorBase.AnchorProvider>
+                                        </ui:AnchorBase>
+                                        <ui:LogMessage DisplayName="Log Message - textBtn Info" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;textBtn scraped as &quot; + textBtn]" />
+                                      </Sequence>
+                                    </DoWhile>
+                                    <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'A  http://training.open...'" sap2010:WorkflowViewState.IdRef="Click_14" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+                                      <ui:Click.CursorPosition>
+                                        <ui:CursorPosition Position="Center">
+                                          <ui:CursorPosition.OffsetX>
+                                            <InArgument x:TypeArguments="x:Int32" />
+                                          </ui:CursorPosition.OffsetX>
+                                          <ui:CursorPosition.OffsetY>
+                                            <InArgument x:TypeArguments="x:Int32" />
+                                          </ui:CursorPosition.OffsetY>
+                                        </ui:CursorPosition>
+                                      </ui:Click.CursorPosition>
+                                      <ui:Click.Target>
+                                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="0eb73e2bb49f825dadeda8d6687349f6" Selector="&lt;webctrl parentid='acme_home' tag='A' /&gt;" WaitForReady="INTERACTIVE" />
+                                      </ui:Click.Target>
+                                    </ui:Click>
+                                  </Sequence>
+                                </ActivityAction>
+                              </ui:BrowserScope.Body>
+                            </ui:BrowserScope>
+                          </Sequence>
+                          <FlowStep.Next>
+                            <FlowStep x:Name="__ReferenceID6" sap2010:WorkflowViewState.IdRef="FlowStep_15">
+                              <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[dt_Orders]" DisplayName="For Each Row- Order Each Product" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+                                <ui:ForEachRow.Body>
+                                  <ActivityAction x:TypeArguments="sd:DataRow">
+                                    <ActivityAction.Argument>
+                                      <DelegateInArgument x:TypeArguments="sd:DataRow" Name="row" />
+                                    </ActivityAction.Argument>
+                                    <Sequence DisplayName="Body" sap2010:WorkflowViewState.IdRef="Sequence_7" />
+                                  </ActivityAction>
+                                </ui:ForEachRow.Body>
+                              </ui:ForEachRow>
+                            </FlowStep>
+                          </FlowStep.Next>
+                        </FlowStep>
+                      </Flowchart.StartNode>
+                      <x:Reference>__ReferenceID6</x:Reference>
+                      <x:Reference>__ReferenceID7</x:Reference>
+                    </Flowchart>
                     <FlowStep.Next>
-                      <FlowStep x:Name="__ReferenceID10" sap2010:WorkflowViewState.IdRef="FlowStep_3">
+                      <FlowStep x:Name="__ReferenceID12" sap2010:WorkflowViewState.IdRef="FlowStep_3">
                         <Flowchart DisplayName="Checkout" sap2010:WorkflowViewState.IdRef="Flowchart_5" StartNode="{x:Null}" />
                         <FlowStep.Next>
-                          <FlowStep x:Name="__ReferenceID11" sap2010:WorkflowViewState.IdRef="FlowStep_2">
+                          <FlowStep x:Name="__ReferenceID13" sap2010:WorkflowViewState.IdRef="FlowStep_2">
                             <Flowchart DisplayName="Logout of Pega" sap2010:WorkflowViewState.IdRef="Flowchart_6" StartNode="{x:Null}" />
                             <FlowStep.Next>
-                              <FlowStep x:Name="__ReferenceID12" sap2010:WorkflowViewState.IdRef="FlowStep_1">
+                              <FlowStep x:Name="__ReferenceID14" sap2010:WorkflowViewState.IdRef="FlowStep_1">
                                 <Flowchart DisplayName="Update Product Detail.xlsx" sap2010:WorkflowViewState.IdRef="Flowchart_7" StartNode="{x:Null}" />
                               </FlowStep>
                             </FlowStep.Next>
@@ -245,14 +335,14 @@
         </FlowStep.Next>
       </FlowStep>
     </Flowchart.StartNode>
-    <x:Reference>__ReferenceID6</x:Reference>
-    <x:Reference>__ReferenceID7</x:Reference>
     <x:Reference>__ReferenceID8</x:Reference>
     <x:Reference>__ReferenceID9</x:Reference>
     <x:Reference>__ReferenceID10</x:Reference>
     <x:Reference>__ReferenceID11</x:Reference>
     <x:Reference>__ReferenceID12</x:Reference>
-    <sads:DebugSymbol.Symbol>d1dDOlxyZXZhdHVyZVxVaXBhdGggUHJvY2Vzc2VzXFByb2plY3RUd29SZXBvc2l0b3J5XEhhbnNlbkJlYXVQcm9qZWN0MlxNYWluRmxvd2NoYXJ0LnhhbWwxRgOAAg8CAQFPCXoVAgEpfQ2hARkCARukARHdAR0CAQbgARXgAYgBAgEF4wEZ4wGAAQIBBOYBHeYBigECAQPpASHpAZoBAgECVg9WvAECATdZE1nbAQIBMlwXYyACAS5mG20kAgEqgAETnAEuAgEcpwEX2QEiAgEHVmxWiAECATpWKFY4AgE4WcgBWdgBAgE1WbIBWbwBAgEzYUJhXwIBMV5DXk0CAS9rRmtjAgEtaEdoUQIBK4ABkQGAAa4BAgEohgEZmAEkAgEdqAEZ2AErAgEIhwEbjgEvAgEjjwEblgEvAgEeqAGwAqgB9wICARquAR/VASoCAQmHAUqHAVcCASaKASGKAVACASWHAXuHAYMBAgEkjwFKjwFYAgEhkgEhkgFQAgEgjwF8jwGFAQIBH68BIb0BLAIBGL4BIcIBLwIBFMMBIccBMQIBEsgBIcwBLwIBDs0BIdQBLAIBCrsBtAG7AeIBAgEZwAG0AcAB4gECARe+AbwCvgHIAgIBFcMBgALDAYUCAgETygG0AcoB4gECARHIAbwCyAHIAgIBD9IBtAHSAeUBAgENzwFNzwFRAgEMzwFAzwFEAgEL</sads:DebugSymbol.Symbol>
+    <x:Reference>__ReferenceID13</x:Reference>
+    <x:Reference>__ReferenceID14</x:Reference>
+    <sads:DebugSymbol.Symbol>d1dDOlxyZXZhdHVyZVxVaXBhdGggUHJvY2Vzc2VzXFByb2plY3RUd29SZXBvc2l0b3J5XEhhbnNlbkJlYXVQcm9qZWN0MlxNYWluRmxvd2NoYXJ0LnhhbWxLRwPaAg8CAQFQCXsVAgFFfg2dARkCATegARHZAR0CASLcARW6AiECAQW9Ahm9AoABAgEEwAIdwAKKAQIBA8MCIcMCmgECAQJXD1e8AQIBU1oTWtsBAgFOXRdkIAIBSmcbbiQCAUaBAROZAS4CATijARfVASICASPfARunAiYCAQqqAh+zAi8CAQZXbFeIAQIBVlcoVzgCAVRayAFa2AECAVFasgFavAECAU9iQmJfAgFNX0NfTQIBS2xGbGMCAUlpR2lRAgFHgQHLAYEB6AECAUSHARmWASQCATmkARnUASsCASTkAR2mAi8CAQuqAlCqAl0CAQiwAiWwAnECAQeIARuOAS8CAT+PARuVAS8CATqkAbACpAH3AgIBNqoBH9EBKgIBJeQBtALkAfgCAgEh6gEjowIuAgEMiAFKiAFXAgFCiwEhiwFQAgFBiAHHAYgBzwECAUCPAUqPAVgCAT2SASGSAVACATyPAcoBjwHTAQIBO6sBIbkBLAIBNLoBIb4BLwIBML8BIcMBMQIBLsQBIcgBLwIBKskBIdABLAIBJu8BJfYBMAIBHfcBJZMCLwIBD5QCJaICMAIBDbcBtAG3AeIBAgE1vAG0AbwB4gECATO6AbwCugHIAgIBMb8BgAK/AYUCAgEvxgG0AcYB4gECAS3EAbwCxAHIAgIBK84BtAHOAeUBAgEpywFNywFRAgEoywFAywFEAgEn9AG4AfQB6gECASDxAVHxAVQCAR/xAUTxAUgCAR73AXv3AaEBAgEc+AEnkgIyAgEQoAK4AaAC6AECAQ75ASmQAjkCARORAimRAtUBAgERigItjgJGAgEa/wEvhgJBAgEUkQKlAZEC0gECARKMAsABjALmAQIBG/8BZf8BcAIBF4ECYoECawIBFYQCrQGEAswBAgEZhALXAYQC3QECARg=</sads:DebugSymbol.Symbol>
   </Flowchart>
   <sap2010:WorkflowViewState.ViewStateManager>
     <sap2010:ViewStateManager>
@@ -354,7 +444,7 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
-      <sap2010:ViewStateData Id="Flowchart_2" sap:VirtualizedContainerService.HintSize="1347.2,636.8">
+      <sap2010:ViewStateData Id="Flowchart_2" sap:VirtualizedContainerService.HintSize="200,52.8">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -365,27 +455,27 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
-      <sap2010:ViewStateData Id="Click_3" sap:VirtualizedContainerService.HintSize="314.4,107.2" />
-      <sap2010:ViewStateData Id="TypeInto_3" sap:VirtualizedContainerService.HintSize="314.4,135.2" />
-      <sap2010:ViewStateData Id="SendHotkey_2" sap:VirtualizedContainerService.HintSize="314.4,117.6" />
-      <sap2010:ViewStateData Id="TypeInto_4" sap:VirtualizedContainerService.HintSize="314.4,135.2" />
-      <sap2010:ViewStateData Id="Click_4" sap:VirtualizedContainerService.HintSize="314.4,107.2" />
-      <sap2010:ViewStateData Id="Sequence_3" sap:VirtualizedContainerService.HintSize="336.8,887.2">
+      <sap2010:ViewStateData Id="Click_9" sap:VirtualizedContainerService.HintSize="314.4,107.2" />
+      <sap2010:ViewStateData Id="TypeInto_5" sap:VirtualizedContainerService.HintSize="314.4,135.2" />
+      <sap2010:ViewStateData Id="SendHotkey_3" sap:VirtualizedContainerService.HintSize="314.4,117.6" />
+      <sap2010:ViewStateData Id="TypeInto_6" sap:VirtualizedContainerService.HintSize="314.4,135.2" />
+      <sap2010:ViewStateData Id="Click_10" sap:VirtualizedContainerService.HintSize="314.4,107.2" />
+      <sap2010:ViewStateData Id="Sequence_10" sap:VirtualizedContainerService.HintSize="336.8,887.2">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
-      <sap2010:ViewStateData Id="BrowserScope_2" sap:VirtualizedContainerService.HintSize="414.4,1034.4" />
-      <sap2010:ViewStateData Id="Sequence_4" sap:VirtualizedContainerService.HintSize="200,52.8">
+      <sap2010:ViewStateData Id="BrowserScope_4" sap:VirtualizedContainerService.HintSize="414.4,1034.4" />
+      <sap2010:ViewStateData Id="Sequence_11" sap:VirtualizedContainerService.HintSize="200,52.8">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
-      <sap2010:ViewStateData Id="FlowStep_13">
+      <sap2010:ViewStateData Id="FlowStep_17">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <av:Point x:Key="ShapeLocation">120,13.6</av:Point>
@@ -404,10 +494,74 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
-      <sap2010:ViewStateData Id="Flowchart_4" sap:VirtualizedContainerService.HintSize="200,52.8">
+      <sap2010:ViewStateData Id="Click_5" sap:VirtualizedContainerService.HintSize="755.2,107.2" />
+      <sap2010:ViewStateData Id="GetAttribute_3" sap:VirtualizedContainerService.HintSize="314.4,135.2" />
+      <sap2010:ViewStateData Id="WaitUiElementAppear_5" sap:VirtualizedContainerService.HintSize="314.4,107.2" />
+      <sap2010:ViewStateData Id="AnchorBase_1" sap:VirtualizedContainerService.HintSize="707.2,228" />
+      <sap2010:ViewStateData Id="LogMessage_1" sap:VirtualizedContainerService.HintSize="707.2,92.8" />
+      <sap2010:ViewStateData Id="Sequence_15" sap:VirtualizedContainerService.HintSize="729.6,485.6">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="DoWhile_1" sap:VirtualizedContainerService.HintSize="755.2,648" />
+      <sap2010:ViewStateData Id="Click_14" sap:VirtualizedContainerService.HintSize="755.2,107.2" />
+      <sap2010:ViewStateData Id="Sequence_8" sap:VirtualizedContainerService.HintSize="777.6,1067.2">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="BrowserScope_3" sap:VirtualizedContainerService.HintSize="500.8,638.4" />
+      <sap2010:ViewStateData Id="Sequence_6" sap:VirtualizedContainerService.HintSize="523.2,807.2">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="Sequence_7" sap:VirtualizedContainerService.HintSize="200,100.8">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="ForEachRow_1" sap:VirtualizedContainerService.HintSize="200,52.8">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="FlowStep_15">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <av:Point x:Key="ShapeLocation">410,33.6</av:Point>
+            <av:Size x:Key="ShapeSize">200,52.8</av:Size>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="FlowStep_16">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <av:Point x:Key="ShapeLocation">120,13.6</av:Point>
+            <av:Size x:Key="ShapeSize">200,52.8</av:Size>
+            <av:PointCollection x:Key="ConnectorLocation">320,40 350,40 350,60 410,60</av:PointCollection>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="Flowchart_4" sap:VirtualizedContainerService.HintSize="1374.4,636.8">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <av:Point x:Key="ShapeLocation">10,2.4</av:Point>
+            <av:Size x:Key="ShapeSize">60,75.2</av:Size>
+            <x:Double x:Key="Width">1360</x:Double>
+            <av:PointCollection x:Key="ConnectorLocation">70,40 120,40</av:PointCollection>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
