@@ -42,6 +42,7 @@
       <x:String>System.Xml.Serialization</x:String>
       <x:String>Microsoft.VisualBasic.CompilerServices</x:String>
       <x:String>System.Security</x:String>
+      <x:String>System.Net</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -84,7 +85,7 @@
       <Variable x:TypeArguments="ss:SecureString" Name="securePasswordString" />
     </Flowchart.Variables>
     <Flowchart.StartNode>
-      <FlowStep x:Name="__ReferenceID34" sap2010:WorkflowViewState.IdRef="FlowStep_35">
+      <FlowStep x:Name="__ReferenceID41" sap2010:WorkflowViewState.IdRef="FlowStep_35">
         <Flowchart DisplayName="Get Assets and Credentials" sap2010:WorkflowViewState.IdRef="Flowchart_14">
           <Flowchart.StartNode>
             <FlowStep x:Name="__ReferenceID0" sap2010:WorkflowViewState.IdRef="FlowStep_36">
@@ -104,7 +105,7 @@
           <x:Reference>__ReferenceID0</x:Reference>
         </Flowchart>
         <FlowStep.Next>
-          <FlowStep x:Name="__ReferenceID29" sap2010:WorkflowViewState.IdRef="FlowStep_6">
+          <FlowStep x:Name="__ReferenceID36" sap2010:WorkflowViewState.IdRef="FlowStep_6">
             <Flowchart DisplayName="Read/ Store Product Details" sap2010:WorkflowViewState.IdRef="Flowchart_2">
               <Flowchart.StartNode>
                 <FlowStep x:Name="__ReferenceID1" sap2010:WorkflowViewState.IdRef="FlowStep_14">
@@ -138,7 +139,7 @@
               <x:Reference>__ReferenceID1</x:Reference>
             </Flowchart>
             <FlowStep.Next>
-              <FlowStep x:Name="__ReferenceID28" sap2010:WorkflowViewState.IdRef="FlowStep_5">
+              <FlowStep x:Name="__ReferenceID35" sap2010:WorkflowViewState.IdRef="FlowStep_5">
                 <Flowchart DisplayName="Login to Pega" sap2010:WorkflowViewState.IdRef="Flowchart_3">
                   <Flowchart.StartNode>
                     <FlowStep x:Name="__ReferenceID2" sap2010:WorkflowViewState.IdRef="FlowStep_17">
@@ -198,7 +199,7 @@
                   <x:Reference>__ReferenceID2</x:Reference>
                 </Flowchart>
                 <FlowStep.Next>
-                  <FlowStep x:Name="__ReferenceID30" sap2010:WorkflowViewState.IdRef="FlowStep_4">
+                  <FlowStep x:Name="__ReferenceID37" sap2010:WorkflowViewState.IdRef="FlowStep_4">
                     <Flowchart DisplayName="Place Orders to Pega" sap2010:WorkflowViewState.IdRef="Flowchart_4">
                       <Flowchart.StartNode>
                         <FlowStep x:Name="__ReferenceID6" sap2010:WorkflowViewState.IdRef="FlowStep_21">
@@ -410,7 +411,7 @@
                                                           </scg:List>
                                                         </ui:SelectItem.Items>
                                                         <ui:SelectItem.Target>
-                                                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="b54edc6c48f281784ce0217ed4d01063" Selector="[selectorName]" WaitForReady="INTERACTIVE" />
+                                                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="b54edc6c48f281784ce0217ed4d01063" Selector="[selectorName]" TimeoutMS="5000" WaitForReady="INTERACTIVE" />
                                                         </ui:SelectItem.Target>
                                                       </ui:SelectItem>
                                                       <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'INPUT  login_button'" sap2010:WorkflowViewState.IdRef="Click_30" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
@@ -495,10 +496,10 @@
                       <x:Reference>__ReferenceID6</x:Reference>
                     </Flowchart>
                     <FlowStep.Next>
-                      <FlowStep x:Name="__ReferenceID31" sap2010:WorkflowViewState.IdRef="FlowStep_3">
+                      <FlowStep x:Name="__ReferenceID38" sap2010:WorkflowViewState.IdRef="FlowStep_3">
                         <Flowchart DisplayName="Checkout" sap2010:WorkflowViewState.IdRef="Flowchart_5">
                           <Flowchart.StartNode>
-                            <FlowStep x:Name="__ReferenceID19" sap2010:WorkflowViewState.IdRef="FlowStep_26">
+                            <FlowStep x:Name="__ReferenceID25" sap2010:WorkflowViewState.IdRef="FlowStep_26">
                               <Flowchart DisplayName="Navigate to cart and Verify cart" sap2010:WorkflowViewState.IdRef="Flowchart_10">
                                 <Flowchart.StartNode>
                                   <FlowStep x:Name="__ReferenceID8" sap2010:WorkflowViewState.IdRef="FlowStep_30">
@@ -567,7 +568,7 @@
                                 <x:Reference>__ReferenceID10</x:Reference>
                               </Flowchart>
                               <FlowStep.Next>
-                                <FlowStep x:Name="__ReferenceID20" sap2010:WorkflowViewState.IdRef="FlowStep_32">
+                                <FlowStep x:Name="__ReferenceID26" sap2010:WorkflowViewState.IdRef="FlowStep_32">
                                   <Flowchart DisplayName="Billing and Shipping Addresses" sap2010:WorkflowViewState.IdRef="Flowchart_13">
                                     <Flowchart.StartNode>
                                       <FlowStep x:Name="__ReferenceID11" sap2010:WorkflowViewState.IdRef="FlowStep_31">
@@ -762,166 +763,187 @@
                                     <x:Reference>__ReferenceID12</x:Reference>
                                   </Flowchart>
                                   <FlowStep.Next>
-                                    <FlowStep x:Name="__ReferenceID21">
-                                      <Flowchart DisplayName="Payment Information">
+                                    <FlowStep x:Name="__ReferenceID27" sap2010:WorkflowViewState.IdRef="FlowStep_44">
+                                      <Flowchart DisplayName="Payment Information" sap2010:WorkflowViewState.IdRef="Flowchart_15">
                                         <Flowchart.Variables>
                                           <Variable x:TypeArguments="x:String" Name="cardType" />
                                           <Variable x:TypeArguments="ss:SecureString" Name="secCodeSecure" />
                                           <Variable x:TypeArguments="ss:SecureString" Name="cardNumberSecure" />
                                           <Variable x:TypeArguments="x:String" Name="expiryMonth" />
                                           <Variable x:TypeArguments="x:String" Name="expiryYear" />
+                                          <Variable x:TypeArguments="x:String" Name="cardNumber" />
+                                          <Variable x:TypeArguments="x:String" Name="pin" />
                                         </Flowchart.Variables>
                                         <Flowchart.StartNode>
-                                          <FlowStep x:Name="__ReferenceID13">
-                                            <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="CardType" DisplayName="Get Asset">
+                                          <FlowStep x:Name="__ReferenceID13" sap2010:WorkflowViewState.IdRef="FlowStep_43">
+                                            <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="CardType" DisplayName="Get Asset" sap2010:WorkflowViewState.IdRef="GetRobotAsset_2">
                                               <ui:GetRobotAsset.Value>
                                                 <OutArgument x:TypeArguments="x:String">[cardType]</OutArgument>
                                               </ui:GetRobotAsset.Value>
-                                              <sap2010:WorkflowViewState.IdRef>GetRobotAsset_2</sap2010:WorkflowViewState.IdRef>
                                             </ui:GetRobotAsset>
                                             <FlowStep.Next>
-                                              <FlowStep x:Name="__ReferenceID14">
-                                                <ui:GetRobotCredential TimeoutMS="{x:Null}" Username="{x:Null}" AssetName="secureVin" DisplayName="Get Credential" Password="[secCodeSecure]" sap2010:WorkflowViewState.IdRef="GetRobotCredential_2" />
+                                              <FlowStep x:Name="__ReferenceID14" sap2010:WorkflowViewState.IdRef="FlowStep_42">
+                                                <ui:GetRobotCredential TimeoutMS="{x:Null}" Username="{x:Null}" AssetName="secureVin" DisplayName="Get Credential" sap2010:WorkflowViewState.IdRef="GetRobotCredential_2" Password="[secCodeSecure]" />
                                                 <FlowStep.Next>
-                                                  <FlowStep x:Name="__ReferenceID15">
-                                                    <ui:GetRobotCredential TimeoutMS="{x:Null}" Username="{x:Null}" AssetName="secureCardNumber" DisplayName="Get Credential" Password="[cardNumberSecure]" sap2010:WorkflowViewState.IdRef="GetRobotCredential_3" />
+                                                  <FlowStep x:Name="__ReferenceID15" sap2010:WorkflowViewState.IdRef="FlowStep_41">
+                                                    <ui:GetRobotCredential TimeoutMS="{x:Null}" Username="{x:Null}" AssetName="secureCardNumber" DisplayName="Get Credential" sap2010:WorkflowViewState.IdRef="GetRobotCredential_3" Password="[cardNumberSecure]" />
                                                     <FlowStep.Next>
-                                                      <FlowStep x:Name="__ReferenceID16">
-                                                        <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="ExpirationMonth" DisplayName="Get Asset">
+                                                      <FlowStep x:Name="__ReferenceID16" sap2010:WorkflowViewState.IdRef="FlowStep_40">
+                                                        <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="ExpirationMonth" DisplayName="Get Asset" sap2010:WorkflowViewState.IdRef="GetRobotAsset_3">
                                                           <ui:GetRobotAsset.Value>
                                                             <OutArgument x:TypeArguments="x:String">[expiryMonth]</OutArgument>
                                                           </ui:GetRobotAsset.Value>
-                                                          <sap2010:WorkflowViewState.IdRef>GetRobotAsset_3</sap2010:WorkflowViewState.IdRef>
                                                         </ui:GetRobotAsset>
                                                         <FlowStep.Next>
-                                                          <FlowStep x:Name="__ReferenceID17">
-                                                            <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="ExpirationYear" DisplayName="Get Asset">
+                                                          <FlowStep x:Name="__ReferenceID17" sap2010:WorkflowViewState.IdRef="FlowStep_39">
+                                                            <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="ExpirationYear" DisplayName="Get Asset" sap2010:WorkflowViewState.IdRef="GetRobotAsset_4">
                                                               <ui:GetRobotAsset.Value>
                                                                 <OutArgument x:TypeArguments="x:String">[expiryYear]</OutArgument>
                                                               </ui:GetRobotAsset.Value>
-                                                              <sap2010:WorkflowViewState.IdRef>GetRobotAsset_4</sap2010:WorkflowViewState.IdRef>
                                                             </ui:GetRobotAsset>
                                                             <FlowStep.Next>
-                                                              <FlowStep x:Name="__ReferenceID18">
-                                                                <Sequence DisplayName="Populate Payment Information">
-                                                                  <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="IE" DisplayName="Attach Browser 'OrderPega Page'" InformativeScreenshot="9e8c2c2eb9a78deba4652ca4098a9693" Selector="&lt;html title='Order | Pega Studio Training Web Application' /&gt;">
-                                                                    <ui:BrowserScope.Body>
-                                                                      <ActivityAction x:TypeArguments="x:Object">
-                                                                        <ActivityAction.Argument>
-                                                                          <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
-                                                                        </ActivityAction.Argument>
-                                                                        <Sequence DisplayName="Do">
-                                                                          <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'P'" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
-                                                                            <ui:Click.CursorPosition>
-                                                                              <ui:CursorPosition OffsetX="18" OffsetY="14" Position="TopLeft" />
-                                                                            </ui:Click.CursorPosition>
-                                                                            <ui:Click.Target>
-                                                                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="14f86baceac0d273f2bc22a39da3dd4e" Selector="&lt;webctrl idx='2' parentid='progressbar_container' tag='P' /&gt;" WaitForReady="COMPLETE" />
-                                                                            </ui:Click.Target>
-                                                                            <sap2010:WorkflowViewState.IdRef>Click_36</sap2010:WorkflowViewState.IdRef>
-                                                                          </ui:Click>
-                                                                          <ui:SelectItem ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Select Item 'SELECT  card_type'" Item="[cardType]">
-                                                                            <ui:SelectItem.Items>
-                                                                              <scg:List x:TypeArguments="x:String" Capacity="4">
-                                                                                <x:String>Card Type</x:String>
-                                                                                <x:String>Visa</x:String>
-                                                                                <x:String>Mastercard</x:String>
-                                                                              </scg:List>
-                                                                            </ui:SelectItem.Items>
-                                                                            <ui:SelectItem.Target>
-                                                                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="2e571839b5cf7d4c3d84cf470de20bf1" Selector="&lt;webctrl id='card_type' tag='SELECT' /&gt;" WaitForReady="COMPLETE" />
-                                                                            </ui:SelectItem.Target>
-                                                                            <sap2010:WorkflowViewState.IdRef>SelectItem_5</sap2010:WorkflowViewState.IdRef>
-                                                                          </ui:SelectItem>
-                                                                          <ui:SendHotkey DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Send Hotkey" EmptyField="False" Key="tab" KeyModifiers="None" SendWindowMessages="False" SpecialKey="True">
-                                                                            <ui:SendHotkey.Target>
-                                                                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" WaitForReady="INTERACTIVE" />
-                                                                            </ui:SendHotkey.Target>
-                                                                            <sap2010:WorkflowViewState.IdRef>SendHotkey_21</sap2010:WorkflowViewState.IdRef>
-                                                                          </ui:SendHotkey>
-                                                                          <ui:TypeInto DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Type Into 'INPUT  security_code'" EmptyField="False" SendWindowMessages="False" SimulateType="True" Text="[secCodeSecure.ToString]">
-                                                                            <ui:TypeInto.Target>
-                                                                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="77bf263d0871fe2dec8f06fa3b36ddf4" Selector="&lt;webctrl id='security_code' tag='INPUT' /&gt;" WaitForReady="COMPLETE" />
-                                                                            </ui:TypeInto.Target>
-                                                                            <sap2010:WorkflowViewState.IdRef>TypeInto_21</sap2010:WorkflowViewState.IdRef>
-                                                                          </ui:TypeInto>
-                                                                          <ui:SendHotkey DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Send Hotkey" EmptyField="False" Key="tab" KeyModifiers="None" SendWindowMessages="False" SpecialKey="True">
-                                                                            <ui:SendHotkey.Target>
-                                                                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" WaitForReady="INTERACTIVE" />
-                                                                            </ui:SendHotkey.Target>
-                                                                            <sap2010:WorkflowViewState.IdRef>SendHotkey_22</sap2010:WorkflowViewState.IdRef>
-                                                                          </ui:SendHotkey>
-                                                                          <ui:TypeInto DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Type Into 'INPUT  card_number'" EmptyField="False" SendWindowMessages="False" SimulateType="False" Text="[cardNumberSecure.ToString]">
-                                                                            <ui:TypeInto.Target>
-                                                                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="224aa6779808753e6d91f1d7697716e6" Selector="&lt;webctrl id='card_number' tag='INPUT' /&gt;" WaitForReady="INTERACTIVE" />
-                                                                            </ui:TypeInto.Target>
-                                                                            <sap2010:WorkflowViewState.IdRef>TypeInto_22</sap2010:WorkflowViewState.IdRef>
-                                                                          </ui:TypeInto>
-                                                                          <ui:SelectItem ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Select Item 'SELECT  expiry_month'" Item="[expiryMonth]">
-                                                                            <ui:SelectItem.Items>
-                                                                              <scg:List x:TypeArguments="x:String" Capacity="16">
-                                                                                <x:String>Expiration Month</x:String>
-                                                                                <x:String>January</x:String>
-                                                                                <x:String>February</x:String>
-                                                                                <x:String>March</x:String>
-                                                                                <x:String>April</x:String>
-                                                                                <x:String>May</x:String>
-                                                                                <x:String>June</x:String>
-                                                                                <x:String>July</x:String>
-                                                                                <x:String>August</x:String>
-                                                                                <x:String>September</x:String>
-                                                                                <x:String>October</x:String>
-                                                                                <x:String>November</x:String>
-                                                                                <x:String>December</x:String>
-                                                                              </scg:List>
-                                                                            </ui:SelectItem.Items>
-                                                                            <ui:SelectItem.Target>
-                                                                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="c0d1c6d5e8b2c5d6635bf86b3aeb8cc4" Selector="&lt;webctrl id='expiry_month' tag='SELECT' /&gt;" WaitForReady="COMPLETE" />
-                                                                            </ui:SelectItem.Target>
-                                                                            <sap2010:WorkflowViewState.IdRef>SelectItem_6</sap2010:WorkflowViewState.IdRef>
-                                                                          </ui:SelectItem>
-                                                                          <ui:SelectItem ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Select Item 'SELECT  expiry_year'" Item="[expiryYear]">
-                                                                            <ui:SelectItem.Items>
-                                                                              <scg:List x:TypeArguments="x:String" Capacity="8">
-                                                                                <x:String>Expiration Year</x:String>
-                                                                                <x:String>2014</x:String>
-                                                                                <x:String>2015</x:String>
-                                                                                <x:String>2016</x:String>
-                                                                                <x:String>2017</x:String>
-                                                                                <x:String>2018</x:String>
-                                                                                <x:String>2019</x:String>
-                                                                                <x:String>2020</x:String>
-                                                                              </scg:List>
-                                                                            </ui:SelectItem.Items>
-                                                                            <ui:SelectItem.Target>
-                                                                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="d46649871f96d81a1458a107097caab5" Selector="&lt;webctrl id='expiry_year' tag='SELECT' /&gt;" WaitForReady="INTERACTIVE" />
-                                                                            </ui:SelectItem.Target>
-                                                                            <sap2010:WorkflowViewState.IdRef>SelectItem_7</sap2010:WorkflowViewState.IdRef>
-                                                                          </ui:SelectItem>
-                                                                          <sap2010:WorkflowViewState.IdRef>Sequence_48</sap2010:WorkflowViewState.IdRef>
+                                                              <FlowStep x:Name="__ReferenceID19" sap2010:WorkflowViewState.IdRef="FlowStep_46">
+                                                                <Assign sap2010:WorkflowViewState.IdRef="Assign_16">
+                                                                  <Assign.To>
+                                                                    <OutArgument x:TypeArguments="x:String">[cardNumber]</OutArgument>
+                                                                  </Assign.To>
+                                                                  <Assign.Value>
+                                                                    <InArgument x:TypeArguments="x:String">[new System.Net.NetworkCredential(string.Empty, cardNumberSecure).Password]</InArgument>
+                                                                  </Assign.Value>
+                                                                </Assign>
+                                                                <FlowStep.Next>
+                                                                  <FlowStep x:Name="__ReferenceID20" sap2010:WorkflowViewState.IdRef="FlowStep_45">
+                                                                    <Assign sap2010:WorkflowViewState.IdRef="Assign_17">
+                                                                      <Assign.To>
+                                                                        <OutArgument x:TypeArguments="x:String">[pin]</OutArgument>
+                                                                      </Assign.To>
+                                                                      <Assign.Value>
+                                                                        <InArgument x:TypeArguments="x:String">[new System.Net.NetworkCredential(string.Empty, secCodeSecure).Password]</InArgument>
+                                                                      </Assign.Value>
+                                                                    </Assign>
+                                                                    <FlowStep.Next>
+                                                                      <FlowStep x:Name="__ReferenceID18" sap2010:WorkflowViewState.IdRef="FlowStep_38">
+                                                                        <Sequence DisplayName="Populate Payment Information" sap2010:WorkflowViewState.IdRef="Sequence_49">
+                                                                          <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="IE" DisplayName="Attach Browser 'OrderPega Page'" sap2010:WorkflowViewState.IdRef="BrowserScope_12" InformativeScreenshot="9e8c2c2eb9a78deba4652ca4098a9693" Selector="&lt;html title='Order | Pega Studio Training Web Application' /&gt;">
+                                                                            <ui:BrowserScope.Body>
+                                                                              <ActivityAction x:TypeArguments="x:Object">
+                                                                                <ActivityAction.Argument>
+                                                                                  <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+                                                                                </ActivityAction.Argument>
+                                                                                <Sequence DisplayName="Do" sap2010:WorkflowViewState.IdRef="Sequence_48">
+                                                                                  <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'P'" sap2010:WorkflowViewState.IdRef="Click_36" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
+                                                                                    <ui:Click.CursorPosition>
+                                                                                      <ui:CursorPosition OffsetX="18" OffsetY="14" Position="TopLeft" />
+                                                                                    </ui:Click.CursorPosition>
+                                                                                    <ui:Click.Target>
+                                                                                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="14f86baceac0d273f2bc22a39da3dd4e" Selector="&lt;webctrl idx='2' parentid='progressbar_container' tag='P' /&gt;" WaitForReady="COMPLETE" />
+                                                                                    </ui:Click.Target>
+                                                                                  </ui:Click>
+                                                                                  <ui:SelectItem ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Select Item 'SELECT  card_type'" sap2010:WorkflowViewState.IdRef="SelectItem_5" Item="[cardType]">
+                                                                                    <ui:SelectItem.Items>
+                                                                                      <scg:List x:TypeArguments="x:String" Capacity="4">
+                                                                                        <x:String>Card Type</x:String>
+                                                                                        <x:String>Visa</x:String>
+                                                                                        <x:String>Mastercard</x:String>
+                                                                                      </scg:List>
+                                                                                    </ui:SelectItem.Items>
+                                                                                    <ui:SelectItem.Target>
+                                                                                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="2e571839b5cf7d4c3d84cf470de20bf1" Selector="&lt;webctrl id='card_type' tag='SELECT' /&gt;" WaitForReady="COMPLETE" />
+                                                                                    </ui:SelectItem.Target>
+                                                                                  </ui:SelectItem>
+                                                                                  <ui:SendHotkey DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Send Hotkey" EmptyField="False" sap2010:WorkflowViewState.IdRef="SendHotkey_21" Key="tab" KeyModifiers="None" SendWindowMessages="False" SpecialKey="True">
+                                                                                    <ui:SendHotkey.Target>
+                                                                                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" WaitForReady="INTERACTIVE" />
+                                                                                    </ui:SendHotkey.Target>
+                                                                                  </ui:SendHotkey>
+                                                                                  <ui:TypeInto DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Type Into 'INPUT  security_code'" EmptyField="False" sap2010:WorkflowViewState.IdRef="TypeInto_21" SendWindowMessages="False" SimulateType="True" Text="[pin]">
+                                                                                    <ui:TypeInto.Target>
+                                                                                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="77bf263d0871fe2dec8f06fa3b36ddf4" Selector="&lt;webctrl id='security_code' tag='INPUT' /&gt;" WaitForReady="COMPLETE" />
+                                                                                    </ui:TypeInto.Target>
+                                                                                  </ui:TypeInto>
+                                                                                  <ui:SendHotkey DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Send Hotkey" EmptyField="False" sap2010:WorkflowViewState.IdRef="SendHotkey_22" Key="tab" KeyModifiers="None" SendWindowMessages="False" SpecialKey="True">
+                                                                                    <ui:SendHotkey.Target>
+                                                                                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" WaitForReady="INTERACTIVE" />
+                                                                                    </ui:SendHotkey.Target>
+                                                                                  </ui:SendHotkey>
+                                                                                  <ui:TypeInto DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Type Into 'INPUT  card_number'" EmptyField="False" sap2010:WorkflowViewState.IdRef="TypeInto_22" SendWindowMessages="False" SimulateType="False" Text="[cardNumber]">
+                                                                                    <ui:TypeInto.Target>
+                                                                                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="224aa6779808753e6d91f1d7697716e6" Selector="&lt;webctrl id='card_number' tag='INPUT' /&gt;" WaitForReady="INTERACTIVE" />
+                                                                                    </ui:TypeInto.Target>
+                                                                                  </ui:TypeInto>
+                                                                                  <ui:SelectItem ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Select Item 'SELECT  expiry_month'" sap2010:WorkflowViewState.IdRef="SelectItem_6" Item="[expiryMonth]">
+                                                                                    <ui:SelectItem.Items>
+                                                                                      <scg:List x:TypeArguments="x:String" Capacity="16">
+                                                                                        <x:String>Expiration Month</x:String>
+                                                                                        <x:String>January</x:String>
+                                                                                        <x:String>February</x:String>
+                                                                                        <x:String>March</x:String>
+                                                                                        <x:String>April</x:String>
+                                                                                        <x:String>May</x:String>
+                                                                                        <x:String>June</x:String>
+                                                                                        <x:String>July</x:String>
+                                                                                        <x:String>August</x:String>
+                                                                                        <x:String>September</x:String>
+                                                                                        <x:String>October</x:String>
+                                                                                        <x:String>November</x:String>
+                                                                                        <x:String>December</x:String>
+                                                                                      </scg:List>
+                                                                                    </ui:SelectItem.Items>
+                                                                                    <ui:SelectItem.Target>
+                                                                                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="c0d1c6d5e8b2c5d6635bf86b3aeb8cc4" Selector="&lt;webctrl id='expiry_month' tag='SELECT' /&gt;" WaitForReady="COMPLETE" />
+                                                                                    </ui:SelectItem.Target>
+                                                                                  </ui:SelectItem>
+                                                                                  <ui:SelectItem ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Select Item 'SELECT  expiry_year'" sap2010:WorkflowViewState.IdRef="SelectItem_7" Item="[expiryYear]">
+                                                                                    <ui:SelectItem.Items>
+                                                                                      <scg:List x:TypeArguments="x:String" Capacity="8">
+                                                                                        <x:String>Expiration Year</x:String>
+                                                                                        <x:String>2014</x:String>
+                                                                                        <x:String>2015</x:String>
+                                                                                        <x:String>2016</x:String>
+                                                                                        <x:String>2017</x:String>
+                                                                                        <x:String>2018</x:String>
+                                                                                        <x:String>2019</x:String>
+                                                                                        <x:String>2020</x:String>
+                                                                                      </scg:List>
+                                                                                    </ui:SelectItem.Items>
+                                                                                    <ui:SelectItem.Target>
+                                                                                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="d46649871f96d81a1458a107097caab5" Selector="&lt;webctrl id='expiry_year' tag='SELECT' /&gt;" WaitForReady="INTERACTIVE" />
+                                                                                    </ui:SelectItem.Target>
+                                                                                  </ui:SelectItem>
+                                                                                  <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'INPUT  submit_button'" sap2010:WorkflowViewState.IdRef="Click_37" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+                                                                                    <ui:Click.CursorPosition>
+                                                                                      <ui:CursorPosition Position="Center">
+                                                                                        <ui:CursorPosition.OffsetX>
+                                                                                          <InArgument x:TypeArguments="x:Int32" />
+                                                                                        </ui:CursorPosition.OffsetX>
+                                                                                        <ui:CursorPosition.OffsetY>
+                                                                                          <InArgument x:TypeArguments="x:Int32" />
+                                                                                        </ui:CursorPosition.OffsetY>
+                                                                                      </ui:CursorPosition>
+                                                                                    </ui:Click.CursorPosition>
+                                                                                    <ui:Click.Target>
+                                                                                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="095c350f5784c4cdaaf9d6d875840a22" Selector="&lt;webctrl id='submit_button' tag='INPUT' /&gt;" WaitForReady="INTERACTIVE" />
+                                                                                    </ui:Click.Target>
+                                                                                  </ui:Click>
+                                                                                </Sequence>
+                                                                              </ActivityAction>
+                                                                            </ui:BrowserScope.Body>
+                                                                          </ui:BrowserScope>
                                                                         </Sequence>
-                                                                      </ActivityAction>
-                                                                    </ui:BrowserScope.Body>
-                                                                    <sap2010:WorkflowViewState.IdRef>BrowserScope_12</sap2010:WorkflowViewState.IdRef>
-                                                                  </ui:BrowserScope>
-                                                                  <sap2010:WorkflowViewState.IdRef>Sequence_49</sap2010:WorkflowViewState.IdRef>
-                                                                </Sequence>
-                                                                <sap2010:WorkflowViewState.IdRef>FlowStep_38</sap2010:WorkflowViewState.IdRef>
+                                                                      </FlowStep>
+                                                                    </FlowStep.Next>
+                                                                  </FlowStep>
+                                                                </FlowStep.Next>
                                                               </FlowStep>
                                                             </FlowStep.Next>
-                                                            <sap2010:WorkflowViewState.IdRef>FlowStep_39</sap2010:WorkflowViewState.IdRef>
                                                           </FlowStep>
                                                         </FlowStep.Next>
-                                                        <sap2010:WorkflowViewState.IdRef>FlowStep_40</sap2010:WorkflowViewState.IdRef>
                                                       </FlowStep>
                                                     </FlowStep.Next>
-                                                    <sap2010:WorkflowViewState.IdRef>FlowStep_41</sap2010:WorkflowViewState.IdRef>
                                                   </FlowStep>
                                                 </FlowStep.Next>
-                                                <sap2010:WorkflowViewState.IdRef>FlowStep_42</sap2010:WorkflowViewState.IdRef>
                                               </FlowStep>
                                             </FlowStep.Next>
-                                            <sap2010:WorkflowViewState.IdRef>FlowStep_43</sap2010:WorkflowViewState.IdRef>
                                           </FlowStep>
                                         </Flowchart.StartNode>
                                         <x:Reference>__ReferenceID13</x:Reference>
@@ -930,24 +952,86 @@
                                         <x:Reference>__ReferenceID16</x:Reference>
                                         <x:Reference>__ReferenceID17</x:Reference>
                                         <x:Reference>__ReferenceID18</x:Reference>
-                                        <sap2010:WorkflowViewState.IdRef>Flowchart_15</sap2010:WorkflowViewState.IdRef>
+                                        <x:Reference>__ReferenceID19</x:Reference>
+                                        <x:Reference>__ReferenceID20</x:Reference>
                                       </Flowchart>
-                                      <sap2010:WorkflowViewState.IdRef>FlowStep_44</sap2010:WorkflowViewState.IdRef>
+                                      <FlowStep.Next>
+                                        <FlowStep x:Name="__ReferenceID28" sap2010:WorkflowViewState.IdRef="FlowStep_49">
+                                          <Flowchart DisplayName="Read and Record Order Number" sap2010:WorkflowViewState.IdRef="Flowchart_16">
+                                            <Flowchart.Variables>
+                                              <Variable x:TypeArguments="x:String" Name="orderNumberParse" />
+                                              <Variable x:TypeArguments="x:String" Name="fullOrderString" />
+                                            </Flowchart.Variables>
+                                            <Flowchart.StartNode>
+                                              <FlowStep x:Name="__ReferenceID21" sap2010:WorkflowViewState.IdRef="FlowStep_47">
+                                                <Sequence DisplayName="Read Order Number from Screen" sap2010:WorkflowViewState.IdRef="Sequence_51">
+                                                  <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="IE" DisplayName="Attach Browser 'OrderProd Page'" sap2010:WorkflowViewState.IdRef="BrowserScope_13" InformativeScreenshot="91fb7c654d9892cf898a4c8a5786b418" Selector="&lt;html title='Order Products | Pega Studio Training Web Application' /&gt;">
+                                                    <ui:BrowserScope.Body>
+                                                      <ActivityAction x:TypeArguments="x:Object">
+                                                        <ActivityAction.Argument>
+                                                          <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+                                                        </ActivityAction.Argument>
+                                                        <Sequence DisplayName="Do" sap2010:WorkflowViewState.IdRef="Sequence_50">
+                                                          <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'B'" sap2010:WorkflowViewState.IdRef="GetValue_1">
+                                                            <ui:GetValue.Target>
+                                                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="515d080ecb98976f2b82c1ef5a02a73c" Selector="&lt;webctrl tag='B' /&gt;" WaitForReady="COMPLETE" />
+                                                            </ui:GetValue.Target>
+                                                            <ui:GetValue.Value>
+                                                              <OutArgument x:TypeArguments="x:String">[fullOrderString]</OutArgument>
+                                                            </ui:GetValue.Value>
+                                                          </ui:GetValue>
+                                                        </Sequence>
+                                                      </ActivityAction>
+                                                    </ui:BrowserScope.Body>
+                                                  </ui:BrowserScope>
+                                                </Sequence>
+                                                <FlowStep.Next>
+                                                  <FlowStep x:Name="__ReferenceID24" sap2010:WorkflowViewState.IdRef="FlowStep_51">
+                                                    <ui:LogMessage DisplayName="Log Message - fullOrderString" sap2010:WorkflowViewState.IdRef="LogMessage_10" Level="Info" Message="[&quot;fullOrderString scraped as &quot; + fullOrderString]" />
+                                                    <FlowStep.Next>
+                                                      <FlowStep x:Name="__ReferenceID22" sap2010:WorkflowViewState.IdRef="FlowStep_48">
+                                                        <Assign DisplayName="Assign - orderNumberParse" sap2010:WorkflowViewState.IdRef="Assign_18">
+                                                          <Assign.To>
+                                                            <OutArgument x:TypeArguments="x:String">[orderNumberParse]</OutArgument>
+                                                          </Assign.To>
+                                                          <Assign.Value>
+                                                            <InArgument x:TypeArguments="x:String">[fullOrderString.Substring(fullOrderString.IndexOf("#"C) + 1)]</InArgument>
+                                                          </Assign.Value>
+                                                        </Assign>
+                                                        <FlowStep.Next>
+                                                          <FlowStep x:Name="__ReferenceID23" sap2010:WorkflowViewState.IdRef="FlowStep_50">
+                                                            <ui:LogMessage DisplayName="Log Message - orderParseNumber" sap2010:WorkflowViewState.IdRef="LogMessage_11" Level="Info" Message="[&quot;orderParseNumber set to &quot; + orderNumberParse]" />
+                                                          </FlowStep>
+                                                        </FlowStep.Next>
+                                                      </FlowStep>
+                                                    </FlowStep.Next>
+                                                  </FlowStep>
+                                                </FlowStep.Next>
+                                              </FlowStep>
+                                            </Flowchart.StartNode>
+                                            <x:Reference>__ReferenceID21</x:Reference>
+                                            <x:Reference>__ReferenceID22</x:Reference>
+                                            <x:Reference>__ReferenceID23</x:Reference>
+                                            <x:Reference>__ReferenceID24</x:Reference>
+                                          </Flowchart>
+                                        </FlowStep>
+                                      </FlowStep.Next>
                                     </FlowStep>
                                   </FlowStep.Next>
                                 </FlowStep>
                               </FlowStep.Next>
                             </FlowStep>
                           </Flowchart.StartNode>
-                          <x:Reference>__ReferenceID19</x:Reference>
-                          <x:Reference>__ReferenceID20</x:Reference>
-                          <x:Reference>__ReferenceID21</x:Reference>
+                          <x:Reference>__ReferenceID25</x:Reference>
+                          <x:Reference>__ReferenceID26</x:Reference>
+                          <x:Reference>__ReferenceID27</x:Reference>
+                          <x:Reference>__ReferenceID28</x:Reference>
                         </Flowchart>
                         <FlowStep.Next>
-                          <FlowStep x:Name="__ReferenceID32" sap2010:WorkflowViewState.IdRef="FlowStep_2">
+                          <FlowStep x:Name="__ReferenceID39" sap2010:WorkflowViewState.IdRef="FlowStep_2">
                             <Flowchart DisplayName="Logout of Pega" sap2010:WorkflowViewState.IdRef="Flowchart_6" StartNode="{x:Null}" />
                             <FlowStep.Next>
-                              <FlowStep x:Name="__ReferenceID33" sap2010:WorkflowViewState.IdRef="FlowStep_1">
+                              <FlowStep x:Name="__ReferenceID40" sap2010:WorkflowViewState.IdRef="FlowStep_1">
                                 <Flowchart DisplayName="Update Product Detail.xlsx" sap2010:WorkflowViewState.IdRef="Flowchart_7" StartNode="{x:Null}" />
                               </FlowStep>
                             </FlowStep.Next>
@@ -970,13 +1054,13 @@
           <Variable x:TypeArguments="njl:JObject" Name="Config" />
         </Flowchart.Variables>
         <Flowchart.StartNode>
-          <FlowStep x:Name="__ReferenceID22" sap2010:WorkflowViewState.IdRef="FlowStep_11">
+          <FlowStep x:Name="__ReferenceID29" sap2010:WorkflowViewState.IdRef="FlowStep_11">
             <ui:ReadTextFile Content="[configParams]" DisplayName="Read Text File - config.txt" FileName="Accessory Files\config.txt" sap2010:WorkflowViewState.IdRef="ReadTextFile_1" />
             <FlowStep.Next>
-              <FlowStep x:Name="__ReferenceID23" sap2010:WorkflowViewState.IdRef="FlowStep_10">
+              <FlowStep x:Name="__ReferenceID30" sap2010:WorkflowViewState.IdRef="FlowStep_10">
                 <ui:DeserializeJson x:TypeArguments="njl:JObject" DisplayName="Deserialize JSON - config.txt" sap2010:WorkflowViewState.IdRef="DeserializeJson`1_1" JsonObject="[Config]" JsonString="[configParams]" />
                 <FlowStep.Next>
-                  <FlowStep x:Name="__ReferenceID26" sap2010:WorkflowViewState.IdRef="FlowStep_24">
+                  <FlowStep x:Name="__ReferenceID33" sap2010:WorkflowViewState.IdRef="FlowStep_24">
                     <Assign sap2010:WorkflowViewState.IdRef="Assign_11">
                       <Assign.To>
                         <OutArgument x:TypeArguments="x:String">[retry]</OutArgument>
@@ -986,7 +1070,7 @@
                       </Assign.Value>
                     </Assign>
                     <FlowStep.Next>
-                      <FlowStep x:Name="__ReferenceID24" sap2010:WorkflowViewState.IdRef="FlowStep_9">
+                      <FlowStep x:Name="__ReferenceID31" sap2010:WorkflowViewState.IdRef="FlowStep_9">
                         <Assign DisplayName="Assign - username" sap2010:WorkflowViewState.IdRef="Assign_1">
                           <Assign.To>
                             <OutArgument x:TypeArguments="x:String">[username]</OutArgument>
@@ -996,7 +1080,7 @@
                           </Assign.Value>
                         </Assign>
                         <FlowStep.Next>
-                          <FlowStep x:Name="__ReferenceID25" sap2010:WorkflowViewState.IdRef="FlowStep_8">
+                          <FlowStep x:Name="__ReferenceID32" sap2010:WorkflowViewState.IdRef="FlowStep_8">
                             <Assign DisplayName="Assign - password" sap2010:WorkflowViewState.IdRef="Assign_2">
                               <Assign.To>
                                 <OutArgument x:TypeArguments="x:String">[password]</OutArgument>
@@ -1006,7 +1090,7 @@
                               </Assign.Value>
                             </Assign>
                             <FlowStep.Next>
-                              <FlowStep x:Name="__ReferenceID27" sap2010:WorkflowViewState.IdRef="FlowStep_25">
+                              <FlowStep x:Name="__ReferenceID34" sap2010:WorkflowViewState.IdRef="FlowStep_25">
                                 <Assign sap2010:WorkflowViewState.IdRef="Assign_13">
                                   <Assign.To>
                                     <OutArgument x:TypeArguments="x:Boolean">[fail]</OutArgument>
@@ -1027,22 +1111,22 @@
             </FlowStep.Next>
           </FlowStep>
         </Flowchart.StartNode>
-        <x:Reference>__ReferenceID22</x:Reference>
-        <x:Reference>__ReferenceID23</x:Reference>
-        <x:Reference>__ReferenceID24</x:Reference>
-        <x:Reference>__ReferenceID25</x:Reference>
-        <x:Reference>__ReferenceID26</x:Reference>
-        <x:Reference>__ReferenceID27</x:Reference>
+        <x:Reference>__ReferenceID29</x:Reference>
+        <x:Reference>__ReferenceID30</x:Reference>
+        <x:Reference>__ReferenceID31</x:Reference>
+        <x:Reference>__ReferenceID32</x:Reference>
+        <x:Reference>__ReferenceID33</x:Reference>
+        <x:Reference>__ReferenceID34</x:Reference>
       </Flowchart>
     </FlowStep>
-    <x:Reference>__ReferenceID28</x:Reference>
-    <x:Reference>__ReferenceID29</x:Reference>
-    <x:Reference>__ReferenceID30</x:Reference>
-    <x:Reference>__ReferenceID31</x:Reference>
-    <x:Reference>__ReferenceID32</x:Reference>
-    <x:Reference>__ReferenceID33</x:Reference>
-    <x:Reference>__ReferenceID34</x:Reference>
-    <sads:DebugSymbol.Symbol>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</sads:DebugSymbol.Symbol>
+    <x:Reference>__ReferenceID35</x:Reference>
+    <x:Reference>__ReferenceID36</x:Reference>
+    <x:Reference>__ReferenceID37</x:Reference>
+    <x:Reference>__ReferenceID38</x:Reference>
+    <x:Reference>__ReferenceID39</x:Reference>
+    <x:Reference>__ReferenceID40</x:Reference>
+    <x:Reference>__ReferenceID41</x:Reference>
+    <sads:DebugSymbol.Symbol>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</sads:DebugSymbol.Symbol>
   </Flowchart>
   <sap2010:WorkflowViewState.ViewStateManager>
     <sap2010:ViewStateManager>
@@ -1343,7 +1427,7 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
-      <sap2010:ViewStateData Id="Flowchart_4" sap:VirtualizedContainerService.HintSize="200,52.8">
+      <sap2010:ViewStateData Id="Flowchart_4" sap:VirtualizedContainerService.HintSize="1374.4,636.8">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1571,6 +1655,8 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="Assign_16" sap:VirtualizedContainerService.HintSize="243.2,60" />
+      <sap2010:ViewStateData Id="Assign_17" sap:VirtualizedContainerService.HintSize="243.2,60" />
       <sap2010:ViewStateData Id="Click_36" sap:VirtualizedContainerService.HintSize="314.4,107.2" />
       <sap2010:ViewStateData Id="SelectItem_5" sap:VirtualizedContainerService.HintSize="314.4,135.2" />
       <sap2010:ViewStateData Id="SendHotkey_21" sap:VirtualizedContainerService.HintSize="314.4,117.6" />
@@ -1579,15 +1665,16 @@
       <sap2010:ViewStateData Id="TypeInto_22" sap:VirtualizedContainerService.HintSize="314.4,135.2" />
       <sap2010:ViewStateData Id="SelectItem_6" sap:VirtualizedContainerService.HintSize="314.4,135.2" />
       <sap2010:ViewStateData Id="SelectItem_7" sap:VirtualizedContainerService.HintSize="314.4,135.2" />
-      <sap2010:ViewStateData Id="Sequence_48" sap:VirtualizedContainerService.HintSize="336.8,1423.2">
+      <sap2010:ViewStateData Id="Click_37" sap:VirtualizedContainerService.HintSize="314.4,107.2" />
+      <sap2010:ViewStateData Id="Sequence_48" sap:VirtualizedContainerService.HintSize="336.8,1570.4">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
-      <sap2010:ViewStateData Id="BrowserScope_12" sap:VirtualizedContainerService.HintSize="414.4,1570.4" />
-      <sap2010:ViewStateData Id="Sequence_49" sap:VirtualizedContainerService.HintSize="436.8,1695.2">
+      <sap2010:ViewStateData Id="BrowserScope_12" sap:VirtualizedContainerService.HintSize="414.4,1717.6" />
+      <sap2010:ViewStateData Id="Sequence_49" sap:VirtualizedContainerService.HintSize="200,52.8">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1597,8 +1684,26 @@
       <sap2010:ViewStateData Id="FlowStep_38">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <av:Point x:Key="ShapeLocation">1120,101.4</av:Point>
+            <av:Point x:Key="ShapeLocation">540,100</av:Point>
             <av:Size x:Key="ShapeSize">200,52.8</av:Size>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="FlowStep_45">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <av:Point x:Key="ShapeLocation">790,101.4</av:Point>
+            <av:Size x:Key="ShapeSize">243.2,60</av:Size>
+            <av:PointCollection x:Key="ConnectorLocation">790,131.4 760,131.4 760,126.4 740,126.4</av:PointCollection>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="FlowStep_46">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <av:Point x:Key="ShapeLocation">1080,100</av:Point>
+            <av:Size x:Key="ShapeSize">243.2,60</av:Size>
+            <av:PointCollection x:Key="ConnectorLocation">1080,130 1050,130 1050,131.4 1033.2,131.4</av:PointCollection>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
@@ -1607,7 +1712,7 @@
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <av:Point x:Key="ShapeLocation">1120,29</av:Point>
             <av:Size x:Key="ShapeSize">200,22.4</av:Size>
-            <av:PointCollection x:Key="ConnectorLocation">1220,51.4 1220,101.4</av:PointCollection>
+            <av:PointCollection x:Key="ConnectorLocation">1220,51.4 1220,81.4 1201.6,81.4 1201.6,100</av:PointCollection>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
@@ -1647,7 +1752,7 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
-      <sap2010:ViewStateData Id="Flowchart_15" sap:VirtualizedContainerService.HintSize="1403.2,636.8">
+      <sap2010:ViewStateData Id="Flowchart_15" sap:VirtualizedContainerService.HintSize="200,52.8">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1658,11 +1763,85 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="GetValue_1" sap:VirtualizedContainerService.HintSize="314.4,107.2" />
+      <sap2010:ViewStateData Id="Sequence_50" sap:VirtualizedContainerService.HintSize="336.8,232">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="BrowserScope_13" sap:VirtualizedContainerService.HintSize="414.4,379.2" />
+      <sap2010:ViewStateData Id="Sequence_51" sap:VirtualizedContainerService.HintSize="200,52.8">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="LogMessage_10" sap:VirtualizedContainerService.HintSize="200,52.8" />
+      <sap2010:ViewStateData Id="Assign_18" sap:VirtualizedContainerService.HintSize="243.2,60" />
+      <sap2010:ViewStateData Id="LogMessage_11" sap:VirtualizedContainerService.HintSize="200,52.8" />
+      <sap2010:ViewStateData Id="FlowStep_50">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <av:Point x:Key="ShapeLocation">930,10.46</av:Point>
+            <av:Size x:Key="ShapeSize">200,52.8</av:Size>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="FlowStep_48">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <av:Point x:Key="ShapeLocation">610,10.46</av:Point>
+            <av:Size x:Key="ShapeSize">243.2,60</av:Size>
+            <av:PointCollection x:Key="ConnectorLocation">853.2,40.46 883.2,40.46 883.2,36.86 930,36.86</av:PointCollection>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="FlowStep_51">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <av:Point x:Key="ShapeLocation">360,10.46</av:Point>
+            <av:Size x:Key="ShapeSize">200,52.8</av:Size>
+            <av:PointCollection x:Key="ConnectorLocation">560,36.86 590,36.86 590,40.46 610,40.46</av:PointCollection>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="FlowStep_47">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <av:Point x:Key="ShapeLocation">110,10.46</av:Point>
+            <av:Size x:Key="ShapeSize">200,52.8</av:Size>
+            <av:PointCollection x:Key="ConnectorLocation">310,36.86 360,36.86</av:PointCollection>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="Flowchart_16" sap:VirtualizedContainerService.HintSize="1396.8,636.8">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <av:Point x:Key="ShapeLocation">0,2.5</av:Point>
+            <av:Size x:Key="ShapeSize">60,75.2</av:Size>
+            <x:Double x:Key="Width">1382.3999999999999</x:Double>
+            <av:PointCollection x:Key="ConnectorLocation">60,40.1 90,40.1 90,36.86 110,36.86</av:PointCollection>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="FlowStep_49">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <av:Point x:Key="ShapeLocation">870,11.4</av:Point>
+            <av:Size x:Key="ShapeSize">200,52.8</av:Size>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
       <sap2010:ViewStateData Id="FlowStep_44">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <av:Point x:Key="ShapeLocation">620,14.44</av:Point>
             <av:Size x:Key="ShapeSize">200,52.8</av:Size>
+            <av:PointCollection x:Key="ConnectorLocation">820,40.84 850,40.84 850,37.8 870,37.8</av:PointCollection>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
@@ -1684,7 +1863,7 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
-      <sap2010:ViewStateData Id="Flowchart_5" sap:VirtualizedContainerService.HintSize="1345.6,636.8">
+      <sap2010:ViewStateData Id="Flowchart_5" sap:VirtualizedContainerService.HintSize="200,52.8">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
