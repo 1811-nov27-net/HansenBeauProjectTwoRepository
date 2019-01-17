@@ -84,18 +84,17 @@
         </Assign>
       </If.Then>
       <If.Else>
-        <Assign>
+        <Assign sap2010:WorkflowViewState.IdRef="Assign_3">
           <Assign.To>
             <OutArgument x:TypeArguments="x:Boolean">[retryVerdict]</OutArgument>
           </Assign.To>
           <Assign.Value>
-            <InArgument x:TypeArguments="x:Boolean">[retryVerdict]</InArgument>
+            <InArgument x:TypeArguments="x:Boolean">True</InArgument>
           </Assign.Value>
-          <sap2010:WorkflowViewState.IdRef>Assign_3</sap2010:WorkflowViewState.IdRef>
         </Assign>
       </If.Else>
     </If>
-    <sads:DebugSymbol.Symbol>d1FDOlxyZXZhdHVyZVxVaXBhdGggUHJvY2Vzc2VzXFByb2plY3RUd29SZXBvc2l0b3J5XEhhbnNlbkJlYXVQcm9qZWN0MlxSZXRyeSsrLnhhbWwMPgNjDgIBAUMFSg4CAQ5LBWEKAgECSC9IOgIBEUUwRTcCAQ9LE0skAgEDTQlUEgIBClcJXxICAQVSNVI6AgENTzZPRAIBC1w1XEMCAQhZNllEAgEG</sads:DebugSymbol.Symbol>
+    <sads:DebugSymbol.Symbol>d1FDOlxyZXZhdHVyZVxVaXBhdGggUHJvY2Vzc2VzXFByb2plY3RUd29SZXBvc2l0b3J5XEhhbnNlbkJlYXVQcm9qZWN0MlxSZXRyeSsrLnhhbWwMPgNiDgIBAUMFSg4CAQ1LBWAKAgECSC9IOgIBEEUwRTcCAQ5LE0skAgEDTQlUEgIBCVcJXhICAQVSNVI6AgEMTzZPRAIBClw1XDkCAQhZNllEAgEG</sads:DebugSymbol.Symbol>
   </Sequence>
   <sap2010:WorkflowViewState.ViewStateManager>
     <sap2010:ViewStateManager>
