@@ -19,6 +19,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
+  <sap2010:WorkflowViewState.IdRef>PlaceOrdersToPega_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -68,44 +69,40 @@
       <AssemblyReference>UiPath.Word</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Flowchart DisplayName="PlaceOrdersToPega">
+  <Flowchart DisplayName="PlaceOrdersToPega" sap2010:WorkflowViewState.IdRef="Flowchart_3">
     <Flowchart.StartNode>
-      <FlowStep x:Name="__ReferenceID10">
-        <Sequence DisplayName="Clear Cart">
+      <FlowStep x:Name="__ReferenceID10" sap2010:WorkflowViewState.IdRef="FlowStep_10">
+        <Sequence DisplayName="Clear Cart" sap2010:WorkflowViewState.IdRef="Sequence_3">
           <Sequence.Variables>
             <Variable x:TypeArguments="x:Boolean" Name="eleExists" />
           </Sequence.Variables>
-          <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="IE" DisplayName="Attach Browser 'Order Page'" InformativeScreenshot="dedea7cc88564265ccad1f20670e796c" Selector="&lt;html title='Home | Pega Studio Training Web Application' /&gt;">
+          <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="IE" DisplayName="Attach Browser 'Order Page'" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="dedea7cc88564265ccad1f20670e796c" Selector="&lt;html title='Home | Pega Studio Training Web Application' /&gt;">
             <ui:BrowserScope.Body>
               <ActivityAction x:TypeArguments="x:Object">
                 <ActivityAction.Argument>
                   <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
                 </ActivityAction.Argument>
-                <Sequence DisplayName="Do">
-                  <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'Cart' Icon" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
+                <Sequence DisplayName="Do" sap2010:WorkflowViewState.IdRef="Sequence_1">
+                  <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'Cart' Icon" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
                     <ui:Click.CursorPosition>
                       <ui:CursorPosition OffsetX="21" OffsetY="10" Position="TopLeft" />
                     </ui:Click.CursorPosition>
                     <ui:Click.Target>
                       <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="236bbacb09aa6fe5d705a10b4ab75dc9" Selector="&lt;webctrl parentid='cart_menu' tag='IMG' /&gt;" WaitForReady="COMPLETE" />
                     </ui:Click.Target>
-                    <sap2010:WorkflowViewState.IdRef>Click_1</sap2010:WorkflowViewState.IdRef>
                   </ui:Click>
-                  <sap2010:WorkflowViewState.IdRef>Sequence_1</sap2010:WorkflowViewState.IdRef>
                 </Sequence>
               </ActivityAction>
             </ui:BrowserScope.Body>
-            <sap2010:WorkflowViewState.IdRef>BrowserScope_1</sap2010:WorkflowViewState.IdRef>
           </ui:BrowserScope>
-          <ui:UiElementExists DisplayName="Element Exists 'Remove' Button" Exists="[eleExists]">
+          <ui:UiElementExists DisplayName="Element Exists 'Remove' Button" Exists="[eleExists]" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
             <ui:UiElementExists.Target>
               <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="84e6403ee411406f45a53d7611880a06" Selector="&lt;html title='Order | Pega Studio Training Web Application' /&gt;&lt;webctrl aaname='Remove' parentid='table_number1' tag='A' /&gt;" TimeoutMS="3000" WaitForReady="INTERACTIVE" />
             </ui:UiElementExists.Target>
-            <sap2010:WorkflowViewState.IdRef>UiElementExists_1</sap2010:WorkflowViewState.IdRef>
           </ui:UiElementExists>
-          <While DisplayName="Clear Cart Entry while it exists" Condition="[eleExists]">
-            <Sequence>
-              <ui:Click DelayBefore="{x:Null}" ClickType="CLICK_SINGLE" DelayMS="1000" DisplayName="Click 'Remove' Button" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+          <While DisplayName="Clear Cart Entry while it exists" sap2010:WorkflowViewState.IdRef="While_1" Condition="[eleExists]">
+            <Sequence sap2010:WorkflowViewState.IdRef="Sequence_2">
+              <ui:Click DelayBefore="{x:Null}" ClickType="CLICK_SINGLE" DelayMS="1000" DisplayName="Click 'Remove' Button" sap2010:WorkflowViewState.IdRef="Click_2" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
                 <ui:Click.CursorPosition>
                   <ui:CursorPosition Position="Center">
                     <ui:CursorPosition.OffsetX>
@@ -119,19 +116,15 @@
                 <ui:Click.Target>
                   <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="39a3b0db7340e84d7fec0b1cd594bb26" Selector="&lt;html title='Order | Pega Studio Training Web Application' /&gt;&lt;webctrl aaname='Remove' parentid='table_number1' tag='A' /&gt;" TimeoutMS="5000" WaitForReady="INTERACTIVE" />
                 </ui:Click.Target>
-                <sap2010:WorkflowViewState.IdRef>Click_2</sap2010:WorkflowViewState.IdRef>
               </ui:Click>
-              <ui:UiElementExists DisplayName="Element Exists 'Remove' Button" Exists="[eleExists]">
+              <ui:UiElementExists DisplayName="Element Exists 'Remove' Button" Exists="[eleExists]" sap2010:WorkflowViewState.IdRef="UiElementExists_2">
                 <ui:UiElementExists.Target>
                   <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="84e6403ee411406f45a53d7611880a06" Selector="&lt;html title='Order | Pega Studio Training Web Application' /&gt;&lt;webctrl aaname='Remove' parentid='table_number1' tag='A' /&gt;" TimeoutMS="3000" WaitForReady="INTERACTIVE" />
                 </ui:UiElementExists.Target>
-                <sap2010:WorkflowViewState.IdRef>UiElementExists_2</sap2010:WorkflowViewState.IdRef>
               </ui:UiElementExists>
-              <sap2010:WorkflowViewState.IdRef>Sequence_2</sap2010:WorkflowViewState.IdRef>
             </Sequence>
-            <sap2010:WorkflowViewState.IdRef>While_1</sap2010:WorkflowViewState.IdRef>
           </While>
-          <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'Order Products' Button" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+          <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'Order Products' Button" sap2010:WorkflowViewState.IdRef="Click_3" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
             <ui:Click.CursorPosition>
               <ui:CursorPosition Position="Center">
                 <ui:CursorPosition.OffsetX>
@@ -145,141 +138,126 @@
             <ui:Click.Target>
               <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="5fd736a3f1f046bf8b496df93379a848" Selector="&lt;html title='Order | Pega Studio Training Web Application' /&gt;&lt;webctrl id='login_button' tag='INPUT' /&gt;" WaitForReady="INTERACTIVE" />
             </ui:Click.Target>
-            <sap2010:WorkflowViewState.IdRef>Click_3</sap2010:WorkflowViewState.IdRef>
           </ui:Click>
-          <sap2010:WorkflowViewState.IdRef>Sequence_3</sap2010:WorkflowViewState.IdRef>
         </Sequence>
         <FlowStep.Next>
-          <FlowStep x:Name="__ReferenceID9">
-            <Flowchart DisplayName="Add Products To Cart">
+          <FlowStep x:Name="__ReferenceID9" sap2010:WorkflowViewState.IdRef="FlowStep_9">
+            <Flowchart DisplayName="Add Products To Cart" sap2010:WorkflowViewState.IdRef="Flowchart_2">
               <Flowchart.Variables>
                 <Variable x:TypeArguments="x:String" Name="clickSelectorName" />
               </Flowchart.Variables>
               <Flowchart.StartNode>
-                <FlowStep x:Name="__ReferenceID7">
-                  <ui:CommentOut>
+                <FlowStep x:Name="__ReferenceID7" sap2010:WorkflowViewState.IdRef="FlowStep_8">
+                  <ui:CommentOut sap2010:WorkflowViewState.IdRef="CommentOut_1">
                     <ui:CommentOut.Body>
-                      <Sequence DisplayName="Ignored Activities">
-                        <Sequence DisplayName="Navigate to Easy-Order Screen">
-                          <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="IE" DisplayName="Attach Browser 'HomePegaS Page'" Selector="&lt;html title='Home | Pega Studio Training Web Application' /&gt;">
+                      <Sequence DisplayName="Ignored Activities" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                        <Sequence DisplayName="Navigate to Easy-Order Screen" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                          <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="IE" DisplayName="Attach Browser 'HomePegaS Page'" sap2010:WorkflowViewState.IdRef="BrowserScope_2" Selector="&lt;html title='Home | Pega Studio Training Web Application' /&gt;">
                             <ui:BrowserScope.Body>
                               <ActivityAction x:TypeArguments="x:Object">
                                 <ActivityAction.Argument>
                                   <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
                                 </ActivityAction.Argument>
-                                <Sequence DisplayName="Do">
-                                  <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'A  http://training.open...'" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
+                                <Sequence DisplayName="Do" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                                  <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'A  http://training.open...'" sap2010:WorkflowViewState.IdRef="Click_4" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
                                     <ui:Click.CursorPosition>
                                       <ui:CursorPosition OffsetX="25" OffsetY="2" Position="TopLeft" />
                                     </ui:Click.CursorPosition>
                                     <ui:Click.Target>
                                       <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="815d0a77b25fb323807da8b1507d46f7" Selector="&lt;webctrl parentid='orders_menu' tag='A' /&gt;" WaitForReady="COMPLETE" />
                                     </ui:Click.Target>
-                                    <sap2010:WorkflowViewState.IdRef>Click_4</sap2010:WorkflowViewState.IdRef>
                                   </ui:Click>
-                                  <sap2010:WorkflowViewState.IdRef>Sequence_4</sap2010:WorkflowViewState.IdRef>
                                 </Sequence>
                               </ActivityAction>
                             </ui:BrowserScope.Body>
-                            <sap2010:WorkflowViewState.IdRef>BrowserScope_2</sap2010:WorkflowViewState.IdRef>
                           </ui:BrowserScope>
-                          <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="IE" DisplayName="Attach Browser 'OrderPega Page'" InformativeScreenshot="4ff7662e65daa6092075f60529368334" Selector="&lt;html title='Order | Pega Studio Training Web Application' /&gt;">
+                          <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="IE" DisplayName="Attach Browser 'OrderPega Page'" sap2010:WorkflowViewState.IdRef="BrowserScope_3" InformativeScreenshot="4ff7662e65daa6092075f60529368334" Selector="&lt;html title='Order | Pega Studio Training Web Application' /&gt;">
                             <ui:BrowserScope.Body>
                               <ActivityAction x:TypeArguments="x:Object">
                                 <ActivityAction.Argument>
                                   <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
                                 </ActivityAction.Argument>
-                                <Sequence DisplayName="Do">
-                                  <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'INPUT  login_button'" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
+                                <Sequence DisplayName="Do" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                                  <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'INPUT  login_button'" sap2010:WorkflowViewState.IdRef="Click_5" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
                                     <ui:Click.CursorPosition>
                                       <ui:CursorPosition OffsetX="30" OffsetY="17" Position="TopLeft" />
                                     </ui:Click.CursorPosition>
                                     <ui:Click.Target>
                                       <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="5fd736a3f1f046bf8b496df93379a848" Selector="&lt;webctrl id='login_button' tag='INPUT' /&gt;" WaitForReady="COMPLETE" />
                                     </ui:Click.Target>
-                                    <sap2010:WorkflowViewState.IdRef>Click_5</sap2010:WorkflowViewState.IdRef>
                                   </ui:Click>
-                                  <sap2010:WorkflowViewState.IdRef>Sequence_5</sap2010:WorkflowViewState.IdRef>
                                 </Sequence>
                               </ActivityAction>
                             </ui:BrowserScope.Body>
-                            <sap2010:WorkflowViewState.IdRef>BrowserScope_3</sap2010:WorkflowViewState.IdRef>
                           </ui:BrowserScope>
-                          <sap2010:WorkflowViewState.IdRef>Sequence_6</sap2010:WorkflowViewState.IdRef>
                         </Sequence>
-                        <sap2010:WorkflowViewState.IdRef>Sequence_7</sap2010:WorkflowViewState.IdRef>
                       </Sequence>
                     </ui:CommentOut.Body>
-                    <sap2010:WorkflowViewState.IdRef>CommentOut_1</sap2010:WorkflowViewState.IdRef>
                   </ui:CommentOut>
                   <FlowStep.Next>
-                    <FlowStep x:Name="__ReferenceID8">
-                      <ui:ForEach x:TypeArguments="sd:DataRow" CurrentIndex="{x:Null}" DisplayName="Order Items via Quick Order" Values="[dt_Orders.Select().ToList().AsEnumerable]">
+                    <FlowStep x:Name="__ReferenceID8" sap2010:WorkflowViewState.IdRef="FlowStep_7">
+                      <ui:ForEach x:TypeArguments="sd:DataRow" CurrentIndex="{x:Null}" DisplayName="Order Items via Quick Order" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[dt_Orders.Select().ToList().AsEnumerable]">
                         <ui:ForEach.Body>
                           <ActivityAction x:TypeArguments="sd:DataRow">
                             <ActivityAction.Argument>
                               <DelegateInArgument x:TypeArguments="sd:DataRow" Name="row" />
                             </ActivityAction.Argument>
-                            <Sequence DisplayName="Body">
+                            <Sequence DisplayName="Body" sap2010:WorkflowViewState.IdRef="Sequence_23">
                               <Sequence.Variables>
                                 <Variable x:TypeArguments="x:String" Name="pName" />
                                 <Variable x:TypeArguments="ui:GenericValue" Name="quantity" />
                                 <Variable x:TypeArguments="x:String" Name="selectorName" />
                               </Sequence.Variables>
-                              <Assign DisplayName="Assign - pName">
+                              <Assign DisplayName="Assign - pName" sap2010:WorkflowViewState.IdRef="Assign_1">
                                 <Assign.To>
                                   <OutArgument x:TypeArguments="x:String">[pName]</OutArgument>
                                 </Assign.To>
                                 <Assign.Value>
                                   <InArgument x:TypeArguments="x:String">[row(0).ToString]</InArgument>
                                 </Assign.Value>
-                                <sap2010:WorkflowViewState.IdRef>Assign_1</sap2010:WorkflowViewState.IdRef>
                               </Assign>
-                              <ui:LogMessage DisplayName="Log Message - pName" Level="Info" Message="[&quot;pName assigned to &quot; + pName]" sap2010:WorkflowViewState.IdRef="LogMessage_1" />
-                              <Assign DisplayName="Assign - quantity">
+                              <ui:LogMessage DisplayName="Log Message - pName" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;pName assigned to &quot; + pName]" />
+                              <Assign DisplayName="Assign - quantity" sap2010:WorkflowViewState.IdRef="Assign_2">
                                 <Assign.To>
                                   <OutArgument x:TypeArguments="ui:GenericValue">[quantity]</OutArgument>
                                 </Assign.To>
                                 <Assign.Value>
                                   <InArgument x:TypeArguments="ui:GenericValue">[row(1).ToString]</InArgument>
                                 </Assign.Value>
-                                <sap2010:WorkflowViewState.IdRef>Assign_2</sap2010:WorkflowViewState.IdRef>
                               </Assign>
-                              <ui:LogMessage DisplayName="Log Message - quantity" Level="Info" Message="[&quot;quantity assigned to &quot; + quantity]" sap2010:WorkflowViewState.IdRef="LogMessage_2" />
-                              <Assign DisplayName="Assign - selectorName">
+                              <ui:LogMessage DisplayName="Log Message - quantity" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;quantity assigned to &quot; + quantity]" />
+                              <Assign DisplayName="Assign - selectorName" sap2010:WorkflowViewState.IdRef="Assign_3">
                                 <Assign.To>
                                   <OutArgument x:TypeArguments="x:String">[selectorName]</OutArgument>
                                 </Assign.To>
                                 <Assign.Value>
                                   <InArgument x:TypeArguments="x:String" xml:space="preserve">["&lt;html title='Quick Order | Pega Studio Training Web Application' /&gt;&lt;webctrl tag='SELECT' rowName='" + pName + "      View ' /&gt;"]</InArgument>
                                 </Assign.Value>
-                                <sap2010:WorkflowViewState.IdRef>Assign_3</sap2010:WorkflowViewState.IdRef>
                               </Assign>
-                              <ui:LogMessage DisplayName="Log Message - Selector Name" Level="Info" Message="[&quot;Selector Name for &quot; + pName + &quot; is &quot; + selectorName]" sap2010:WorkflowViewState.IdRef="LogMessage_3" />
-                              <Assign DisplayName="Assign - clickSelectorName">
+                              <ui:LogMessage DisplayName="Log Message - Selector Name" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;Selector Name for &quot; + pName + &quot; is &quot; + selectorName]" />
+                              <Assign DisplayName="Assign - clickSelectorName" sap2010:WorkflowViewState.IdRef="Assign_4">
                                 <Assign.To>
                                   <OutArgument x:TypeArguments="x:String">[clickSelectorName]</OutArgument>
                                 </Assign.To>
                                 <Assign.Value>
                                   <InArgument x:TypeArguments="x:String" xml:space="preserve">["&lt;html title='Quick Order | Pega Studio Training Web Application' /&gt;&lt;webctrl id='login_button' tag='INPUT' rowName='" + pName + "      View ' /&gt;"]</InArgument>
                                 </Assign.Value>
-                                <sap2010:WorkflowViewState.IdRef>Assign_4</sap2010:WorkflowViewState.IdRef>
                               </Assign>
-                              <TryCatch DisplayName="Try Catch - ">
+                              <TryCatch DisplayName="Try Catch - " sap2010:WorkflowViewState.IdRef="TryCatch_1">
                                 <TryCatch.Variables>
                                   <Variable x:TypeArguments="x:String" Name="writeCellStatus" />
                                   <Variable x:TypeArguments="x:String" Name="writeCellNotes" />
                                 </TryCatch.Variables>
                                 <TryCatch.Try>
-                                  <Sequence>
-                                    <Flowchart>
+                                  <Sequence sap2010:WorkflowViewState.IdRef="Sequence_8">
+                                    <Flowchart DisplayName="Order Product" sap2010:WorkflowViewState.IdRef="Flowchart_1">
                                       <Flowchart.Variables>
                                         <Variable x:TypeArguments="ui:GenericValue" Name="selectedItem" />
                                         <Variable x:TypeArguments="x:Int32" Default="0" Name="notSelectedCount" />
                                       </Flowchart.Variables>
                                       <Flowchart.StartNode>
-                                        <FlowStep x:Name="__ReferenceID0">
-                                          <ui:SelectItem ContinueOnError="{x:Null}" DelayBefore="{x:Null}" DelayAfter="500" DisplayName="Select Item 'quantity' After Finding Correct Dropdown" Item="[quantity]">
+                                        <FlowStep x:Name="__ReferenceID0" sap2010:WorkflowViewState.IdRef="FlowStep_6">
+                                          <ui:SelectItem ContinueOnError="{x:Null}" DelayBefore="{x:Null}" DelayAfter="500" DisplayName="Select Item 'quantity' After Finding Correct Dropdown" sap2010:WorkflowViewState.IdRef="SelectItem_1" Item="[quantity]">
                                             <ui:SelectItem.Items>
                                               <scg:List x:TypeArguments="x:String" Capacity="32">
                                                 <x:String>1</x:String>
@@ -307,27 +285,25 @@
                                             <ui:SelectItem.Target>
                                               <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="b54edc6c48f281784ce0217ed4d01063" Selector="[selectorName]" TimeoutMS="10000" WaitForReady="INTERACTIVE" />
                                             </ui:SelectItem.Target>
-                                            <sap2010:WorkflowViewState.IdRef>SelectItem_1</sap2010:WorkflowViewState.IdRef>
                                           </ui:SelectItem>
                                           <FlowStep.Next>
-                                            <FlowStep x:Name="__ReferenceID3">
-                                              <ui:GetAttribute ContinueOnError="{x:Null}" Attribute="selectedItem" DisplayName="Get Attribute 'SELECT  product_quantit...'">
+                                            <FlowStep x:Name="__ReferenceID3" sap2010:WorkflowViewState.IdRef="FlowStep_5">
+                                              <ui:GetAttribute ContinueOnError="{x:Null}" Attribute="selectedItem" DisplayName="Get Attribute 'SELECT  product_quantit...'" sap2010:WorkflowViewState.IdRef="GetAttribute_1">
                                                 <ui:GetAttribute.Result>
                                                   <OutArgument x:TypeArguments="ui:GenericValue">[selectedItem]</OutArgument>
                                                 </ui:GetAttribute.Result>
                                                 <ui:GetAttribute.Target>
                                                   <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="101af5e363cd00591ca3d1d1d100b8f2" Selector="&lt;html title='Quick Order | Pega Studio Training Web Application' /&gt;&lt;webctrl id='product_quantity1' tag='SELECT' /&gt;" WaitForReady="INTERACTIVE" />
                                                 </ui:GetAttribute.Target>
-                                                <sap2010:WorkflowViewState.IdRef>GetAttribute_1</sap2010:WorkflowViewState.IdRef>
                                               </ui:GetAttribute>
                                               <FlowStep.Next>
-                                                <FlowStep x:Name="__ReferenceID2">
-                                                  <ui:LogMessage DisplayName="Log Message - selectedItem" Level="Info" Message="[&quot;selectedItem: &quot; + selectedItem.ToString]" sap2010:WorkflowViewState.IdRef="LogMessage_4" />
+                                                <FlowStep x:Name="__ReferenceID2" sap2010:WorkflowViewState.IdRef="FlowStep_4">
+                                                  <ui:LogMessage DisplayName="Log Message - selectedItem" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;selectedItem: &quot; + selectedItem.ToString]" />
                                                   <FlowStep.Next>
-                                                    <FlowDecision x:Name="__ReferenceID4" Condition="[selectedItem.ToString.Equals(quantity) OR notSelectedCount &gt;=3]" DisplayName="Flow Decision">
+                                                    <FlowDecision x:Name="__ReferenceID4" Condition="[selectedItem.ToString.Equals(quantity) OR notSelectedCount &gt;=3]" DisplayName="Flow Decision" sap2010:WorkflowViewState.IdRef="FlowDecision_1">
                                                       <FlowDecision.True>
-                                                        <FlowStep x:Name="__ReferenceID1">
-                                                          <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'Order Button'" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+                                                        <FlowStep x:Name="__ReferenceID1" sap2010:WorkflowViewState.IdRef="FlowStep_1">
+                                                          <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'Order Button'" sap2010:WorkflowViewState.IdRef="Click_6" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
                                                             <ui:Click.CursorPosition>
                                                               <ui:CursorPosition Position="Center">
                                                                 <ui:CursorPosition.OffsetX>
@@ -341,44 +317,35 @@
                                                             <ui:Click.Target>
                                                               <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="9de72e4d595137eba3f12d3e18333cc0" Selector="[clickSelectorName]" TimeoutMS="5000" WaitForReady="INTERACTIVE" />
                                                             </ui:Click.Target>
-                                                            <sap2010:WorkflowViewState.IdRef>Click_6</sap2010:WorkflowViewState.IdRef>
                                                           </ui:Click>
-                                                          <sap2010:WorkflowViewState.IdRef>FlowStep_1</sap2010:WorkflowViewState.IdRef>
                                                         </FlowStep>
                                                       </FlowDecision.True>
                                                       <FlowDecision.False>
-                                                        <FlowStep x:Name="__ReferenceID5">
-                                                          <Assign>
+                                                        <FlowStep x:Name="__ReferenceID5" sap2010:WorkflowViewState.IdRef="FlowStep_3">
+                                                          <Assign sap2010:WorkflowViewState.IdRef="Assign_5">
                                                             <Assign.To>
                                                               <OutArgument x:TypeArguments="x:Int32">[notSelectedCount]</OutArgument>
                                                             </Assign.To>
                                                             <Assign.Value>
                                                               <InArgument x:TypeArguments="x:Int32">[notSelectedCount + 1]</InArgument>
                                                             </Assign.Value>
-                                                            <sap2010:WorkflowViewState.IdRef>Assign_5</sap2010:WorkflowViewState.IdRef>
                                                           </Assign>
                                                           <FlowStep.Next>
-                                                            <FlowStep x:Name="__ReferenceID6">
-                                                              <ui:LogMessage DisplayName="Log Message - notSelectedCount" Level="Info" Message="[&quot;notSelectedCount = &quot; + notSelectedCount.ToString]" sap2010:WorkflowViewState.IdRef="LogMessage_5" />
+                                                            <FlowStep x:Name="__ReferenceID6" sap2010:WorkflowViewState.IdRef="FlowStep_2">
+                                                              <ui:LogMessage DisplayName="Log Message - notSelectedCount" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;notSelectedCount = &quot; + notSelectedCount.ToString]" />
                                                               <FlowStep.Next>
                                                                 <x:Reference>__ReferenceID0</x:Reference>
                                                               </FlowStep.Next>
-                                                              <sap2010:WorkflowViewState.IdRef>FlowStep_2</sap2010:WorkflowViewState.IdRef>
                                                             </FlowStep>
                                                           </FlowStep.Next>
-                                                          <sap2010:WorkflowViewState.IdRef>FlowStep_3</sap2010:WorkflowViewState.IdRef>
                                                         </FlowStep>
                                                       </FlowDecision.False>
-                                                      <sap2010:WorkflowViewState.IdRef>FlowDecision_1</sap2010:WorkflowViewState.IdRef>
                                                     </FlowDecision>
                                                   </FlowStep.Next>
-                                                  <sap2010:WorkflowViewState.IdRef>FlowStep_4</sap2010:WorkflowViewState.IdRef>
                                                 </FlowStep>
                                               </FlowStep.Next>
-                                              <sap2010:WorkflowViewState.IdRef>FlowStep_5</sap2010:WorkflowViewState.IdRef>
                                             </FlowStep>
                                           </FlowStep.Next>
-                                          <sap2010:WorkflowViewState.IdRef>FlowStep_6</sap2010:WorkflowViewState.IdRef>
                                         </FlowStep>
                                       </Flowchart.StartNode>
                                       <x:Reference>__ReferenceID1</x:Reference>
@@ -388,97 +355,86 @@
                                       <x:Reference>__ReferenceID4</x:Reference>
                                       <x:Reference>__ReferenceID5</x:Reference>
                                       <x:Reference>__ReferenceID6</x:Reference>
-                                      <sap2010:WorkflowViewState.IdRef>Flowchart_1</sap2010:WorkflowViewState.IdRef>
                                     </Flowchart>
-                                    <sap2010:WorkflowViewState.IdRef>Sequence_8</sap2010:WorkflowViewState.IdRef>
                                   </Sequence>
                                 </TryCatch.Try>
                                 <TryCatch.Catches>
-                                  <Catch x:TypeArguments="ss:TimeoutException">
+                                  <Catch x:TypeArguments="ss:TimeoutException" sap2010:WorkflowViewState.IdRef="Catch`1_1">
                                     <ActivityAction x:TypeArguments="ss:TimeoutException">
                                       <ActivityAction.Argument>
                                         <DelegateInArgument x:TypeArguments="ss:TimeoutException" Name="exception" />
                                       </ActivityAction.Argument>
-                                      <Sequence DisplayName="Sequence">
-                                        <Sequence>
-                                          <ui:LogMessage DisplayName="Log Message - TimeoutException during Ordering Products" Level="Error" Message="[&quot;TimeoutException caught during product order for &quot; + pName + &quot; with quantity &quot; + quantity]" sap2010:WorkflowViewState.IdRef="LogMessage_6" />
-                                          <sap2010:WorkflowViewState.IdRef>Sequence_9</sap2010:WorkflowViewState.IdRef>
+                                      <Sequence DisplayName="Sequence" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                                        <Sequence sap2010:WorkflowViewState.IdRef="Sequence_9">
+                                          <ui:LogMessage DisplayName="Log Message - TimeoutException during Ordering Products" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Error" Message="[&quot;TimeoutException caught during product order for &quot; + pName + &quot; with quantity &quot; + quantity]" />
                                         </Sequence>
-                                        <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" WorkbookPath="Accessory Files\Orders2.xlsx">
+                                        <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" WorkbookPath="Accessory Files\Orders2.xlsx">
                                           <ui:ExcelApplicationScope.Body>
                                             <ActivityAction x:TypeArguments="ui:WorkbookApplication">
                                               <ActivityAction.Argument>
                                                 <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
                                               </ActivityAction.Argument>
-                                              <Sequence>
+                                              <Sequence sap2010:WorkflowViewState.IdRef="Sequence_11">
                                                 <Sequence.Variables>
                                                   <Variable x:TypeArguments="x:String" Name="writeCellStatus" />
                                                 </Sequence.Variables>
-                                                <Assign>
+                                                <Assign sap2010:WorkflowViewState.IdRef="Assign_6">
                                                   <Assign.To>
                                                     <OutArgument x:TypeArguments="x:String">[writeCellStatus]</OutArgument>
                                                   </Assign.To>
                                                   <Assign.Value>
                                                     <InArgument x:TypeArguments="x:String">["C" + (dt_Orders.Rows.IndexOf(row) + 2).ToString]</InArgument>
                                                   </Assign.Value>
-                                                  <sap2010:WorkflowViewState.IdRef>Assign_6</sap2010:WorkflowViewState.IdRef>
                                                 </Assign>
-                                                <ui:LogMessage DisplayName="Log Message - writeCellStatus" Level="Info" Message="[&quot;writeCellStatus retrieved as &quot; + writeCellStatus]" sap2010:WorkflowViewState.IdRef="LogMessage_7" />
-                                                <Assign>
+                                                <ui:LogMessage DisplayName="Log Message - writeCellStatus" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Info" Message="[&quot;writeCellStatus retrieved as &quot; + writeCellStatus]" />
+                                                <Assign sap2010:WorkflowViewState.IdRef="Assign_7">
                                                   <Assign.To>
                                                     <OutArgument x:TypeArguments="x:String">[writeCellNotes]</OutArgument>
                                                   </Assign.To>
                                                   <Assign.Value>
                                                     <InArgument x:TypeArguments="x:String">["D" + (dt_Orders.Rows.IndexOf(row) + 2).ToString]</InArgument>
                                                   </Assign.Value>
-                                                  <sap2010:WorkflowViewState.IdRef>Assign_7</sap2010:WorkflowViewState.IdRef>
                                                 </Assign>
-                                                <ui:LogMessage DisplayName="Log Message - writeCellNotes" Level="Info" Message="[&quot;writeCellStatus retrieved as &quot; + writeCellStatus]" sap2010:WorkflowViewState.IdRef="LogMessage_8" />
-                                                <Sequence DisplayName="Do">
-                                                  <ui:ExcelWriteCell Cell="[writeCellStatus]" DisplayName="Write Cell" SheetName="Orders" Text="Unsuccessful" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_1" />
-                                                  <ui:ExcelWriteCell Cell="[writeCellNotes]" DisplayName="Write Cell" SheetName="Orders" Text="Item was not found on website. Order was not placed" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_2" />
-                                                  <AddToCollection x:TypeArguments="x:String" Collection="[unsuccessfulOrdersList]" DisplayName="Add To Collection" Item="[pName]" sap2010:WorkflowViewState.IdRef="AddToCollection`1_1" />
-                                                  <sap2010:WorkflowViewState.IdRef>Sequence_10</sap2010:WorkflowViewState.IdRef>
+                                                <ui:LogMessage DisplayName="Log Message - writeCellNotes" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Info" Message="[&quot;writeCellStatus retrieved as &quot; + writeCellStatus]" />
+                                                <Sequence DisplayName="Do" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                                                  <ui:ExcelWriteCell Cell="[writeCellStatus]" DisplayName="Write Cell" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_1" SheetName="Orders" Text="Unsuccessful" />
+                                                  <ui:ExcelWriteCell Cell="[writeCellNotes]" DisplayName="Write Cell" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_2" SheetName="Orders" Text="Item was not found on website. Order was not placed" />
+                                                  <AddToCollection x:TypeArguments="x:String" Collection="[unsuccessfulOrdersList]" DisplayName="Add To Collection" sap2010:WorkflowViewState.IdRef="AddToCollection`1_1" Item="[pName]" />
                                                 </Sequence>
-                                                <sap2010:WorkflowViewState.IdRef>Sequence_11</sap2010:WorkflowViewState.IdRef>
                                               </Sequence>
                                             </ActivityAction>
                                           </ui:ExcelApplicationScope.Body>
-                                          <sap2010:WorkflowViewState.IdRef>ExcelApplicationScope_1</sap2010:WorkflowViewState.IdRef>
                                         </ui:ExcelApplicationScope>
                                         <ui:Continue sap2010:WorkflowViewState.IdRef="Continue_1" />
-                                        <sap2010:WorkflowViewState.IdRef>Sequence_12</sap2010:WorkflowViewState.IdRef>
                                       </Sequence>
                                     </ActivityAction>
-                                    <sap2010:WorkflowViewState.IdRef>Catch`1_1</sap2010:WorkflowViewState.IdRef>
                                   </Catch>
-                                  <Catch x:TypeArguments="ui:SelectorNotFoundException">
+                                  <Catch x:TypeArguments="ui:SelectorNotFoundException" sap2010:WorkflowViewState.IdRef="Catch`1_2">
                                     <ActivityAction x:TypeArguments="ui:SelectorNotFoundException">
                                       <ActivityAction.Argument>
                                         <DelegateInArgument x:TypeArguments="ui:SelectorNotFoundException" Name="exception" />
                                       </ActivityAction.Argument>
-                                      <Sequence>
+                                      <Sequence sap2010:WorkflowViewState.IdRef="Sequence_22">
                                         <Sequence.Variables>
                                           <Variable x:TypeArguments="x:String" Name="noSelectorEle" />
                                         </Sequence.Variables>
-                                        <ui:LogMessage DisplayName="Log Message - SelectorNotFoundException during Ordering Products" Level="Error" Message="[&quot;SelectorNotFoundException caught during product order for &quot; + pName + &quot; with quantity &quot; + quantity]" sap2010:WorkflowViewState.IdRef="LogMessage_9" />
-                                        <ui:GetAttribute ContinueOnError="{x:Null}" Attribute="url" DisplayName="Get Attribute 'AddressDisplay Control'">
+                                        <ui:LogMessage DisplayName="Log Message - SelectorNotFoundException during Ordering Products" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="Error" Message="[&quot;SelectorNotFoundException caught during product order for &quot; + pName + &quot; with quantity &quot; + quantity]" />
+                                        <ui:GetAttribute ContinueOnError="{x:Null}" Attribute="url" DisplayName="Get Attribute 'AddressDisplay Control'" sap2010:WorkflowViewState.IdRef="GetAttribute_2">
                                           <ui:GetAttribute.Result>
                                             <OutArgument x:TypeArguments="x:String">[noSelectorEle]</OutArgument>
                                           </ui:GetAttribute.Result>
                                           <ui:GetAttribute.Target>
                                             <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="1340e8dd0e7606e38d1226aba930e826" Selector="&lt;html title='* | Pega Studio Training Web Application' /&gt;&lt;webctrl omit:css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div' omit:parentid='load_content' tag='DIV' /&gt;" WaitForReady="INTERACTIVE" />
                                           </ui:GetAttribute.Target>
-                                          <sap2010:WorkflowViewState.IdRef>GetAttribute_2</sap2010:WorkflowViewState.IdRef>
                                         </ui:GetAttribute>
-                                        <ui:LogMessage DisplayName="Log Message - noSelectorEle" Level="Info" Message="[&quot;noSelectorEle found is &quot; + noSelectorEle]" sap2010:WorkflowViewState.IdRef="LogMessage_10" />
-                                        <If Condition="[noSelectorEle.ToLower.Contains(&quot;alert&quot;)]" DisplayName="If - Name Not Found or OutOfStock">
+                                        <ui:LogMessage DisplayName="Log Message - noSelectorEle" sap2010:WorkflowViewState.IdRef="LogMessage_10" Level="Info" Message="[&quot;noSelectorEle found is &quot; + noSelectorEle]" />
+                                        <If Condition="[noSelectorEle.ToLower.Contains(&quot;alert&quot;)]" DisplayName="If - Name Not Found or OutOfStock" sap2010:WorkflowViewState.IdRef="If_2">
                                           <If.Then>
-                                            <Sequence>
-                                              <If Condition="[noSelectorEle.ToLower.Contains(&quot;-&quot;C)]">
+                                            <Sequence sap2010:WorkflowViewState.IdRef="Sequence_19">
+                                              <If Condition="[noSelectorEle.ToLower.Contains(&quot;-&quot;C)]" sap2010:WorkflowViewState.IdRef="If_1">
                                                 <If.Then>
-                                                  <Sequence>
-                                                    <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'Go Back'" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+                                                  <Sequence sap2010:WorkflowViewState.IdRef="Sequence_15">
+                                                    <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'Go Back'" sap2010:WorkflowViewState.IdRef="Click_7" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
                                                       <ui:Click.CursorPosition>
                                                         <ui:CursorPosition Position="Center">
                                                           <ui:CursorPosition.OffsetX>
@@ -492,53 +448,46 @@
                                                       <ui:Click.Target>
                                                         <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="5a3814cf99aaa87116cd64ea43b95ad2" Selector="&lt;wnd app='iexplore.exe' cls='IEFrame' title='404 Page Not Found - Internet Explorer' /&gt;&lt;wnd cls='ToolbarWindow32' idx='1' /&gt;&lt;ctrl name='Back' role='push button' /&gt;" WaitForReady="INTERACTIVE" />
                                                       </ui:Click.Target>
-                                                      <sap2010:WorkflowViewState.IdRef>Click_7</sap2010:WorkflowViewState.IdRef>
                                                     </ui:Click>
-                                                    <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope - Orders2.xlsx" WorkbookPath="Accessory Files\Orders2.xlsx">
+                                                    <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope - Orders2.xlsx" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_2" WorkbookPath="Accessory Files\Orders2.xlsx">
                                                       <ui:ExcelApplicationScope.Body>
                                                         <ActivityAction x:TypeArguments="ui:WorkbookApplication">
                                                           <ActivityAction.Argument>
                                                             <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
                                                           </ActivityAction.Argument>
-                                                          <Sequence>
-                                                            <Assign>
+                                                          <Sequence sap2010:WorkflowViewState.IdRef="Sequence_14">
+                                                            <Assign sap2010:WorkflowViewState.IdRef="Assign_8">
                                                               <Assign.To>
                                                                 <OutArgument x:TypeArguments="x:String">[writeCellStatus]</OutArgument>
                                                               </Assign.To>
                                                               <Assign.Value>
                                                                 <InArgument x:TypeArguments="x:String">["C" + (dt_Orders.Rows.IndexOf(row) + 2).ToString]</InArgument>
                                                               </Assign.Value>
-                                                              <sap2010:WorkflowViewState.IdRef>Assign_8</sap2010:WorkflowViewState.IdRef>
                                                             </Assign>
-                                                            <ui:LogMessage DisplayName="Log Message - writeCellStatus" Level="Info" Message="[&quot;writeCellStatus retrieved as &quot; + writeCellStatus]" sap2010:WorkflowViewState.IdRef="LogMessage_11" />
-                                                            <Assign>
+                                                            <ui:LogMessage DisplayName="Log Message - writeCellStatus" sap2010:WorkflowViewState.IdRef="LogMessage_11" Level="Info" Message="[&quot;writeCellStatus retrieved as &quot; + writeCellStatus]" />
+                                                            <Assign sap2010:WorkflowViewState.IdRef="Assign_9">
                                                               <Assign.To>
                                                                 <OutArgument x:TypeArguments="x:String">[writeCellNotes]</OutArgument>
                                                               </Assign.To>
                                                               <Assign.Value>
                                                                 <InArgument x:TypeArguments="x:String">["D" + (dt_Orders.Rows.IndexOf(row) + 2).ToString]</InArgument>
                                                               </Assign.Value>
-                                                              <sap2010:WorkflowViewState.IdRef>Assign_9</sap2010:WorkflowViewState.IdRef>
                                                             </Assign>
-                                                            <ui:LogMessage DisplayName="Log Message - writeCellNotes" Level="Info" Message="[&quot;writeCellStatus retrieved as &quot; + writeCellNotes]" sap2010:WorkflowViewState.IdRef="LogMessage_12" />
-                                                            <Sequence DisplayName="Do">
-                                                              <ui:ExcelWriteCell Cell="[writeCellStatus]" DisplayName="Write Cell" SheetName="Orders" Text="Unsuccessful" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_3" />
-                                                              <ui:ExcelWriteCell Cell="[writeCellNotes]" DisplayName="Write Cell" SheetName="Orders" Text="Item is out of stock (negative value). Order was not placed" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_4" />
-                                                              <AddToCollection x:TypeArguments="x:String" Collection="[unsuccessfulOrdersList]" DisplayName="Add To Collection" Item="[pName]" sap2010:WorkflowViewState.IdRef="AddToCollection`1_2" />
-                                                              <sap2010:WorkflowViewState.IdRef>Sequence_13</sap2010:WorkflowViewState.IdRef>
+                                                            <ui:LogMessage DisplayName="Log Message - writeCellNotes" sap2010:WorkflowViewState.IdRef="LogMessage_12" Level="Info" Message="[&quot;writeCellStatus retrieved as &quot; + writeCellNotes]" />
+                                                            <Sequence DisplayName="Do" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                                                              <ui:ExcelWriteCell Cell="[writeCellStatus]" DisplayName="Write Cell" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_3" SheetName="Orders" Text="Unsuccessful" />
+                                                              <ui:ExcelWriteCell Cell="[writeCellNotes]" DisplayName="Write Cell" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_4" SheetName="Orders" Text="Item is out of stock (negative value). Order was not placed" />
+                                                              <AddToCollection x:TypeArguments="x:String" Collection="[unsuccessfulOrdersList]" DisplayName="Add To Collection" sap2010:WorkflowViewState.IdRef="AddToCollection`1_2" Item="[pName]" />
                                                             </Sequence>
-                                                            <sap2010:WorkflowViewState.IdRef>Sequence_14</sap2010:WorkflowViewState.IdRef>
                                                           </Sequence>
                                                         </ActivityAction>
                                                       </ui:ExcelApplicationScope.Body>
-                                                      <sap2010:WorkflowViewState.IdRef>ExcelApplicationScope_2</sap2010:WorkflowViewState.IdRef>
                                                     </ui:ExcelApplicationScope>
-                                                    <sap2010:WorkflowViewState.IdRef>Sequence_15</sap2010:WorkflowViewState.IdRef>
                                                   </Sequence>
                                                 </If.Then>
                                                 <If.Else>
-                                                  <Sequence>
-                                                    <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'BUTTON  modal-close'" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+                                                  <Sequence sap2010:WorkflowViewState.IdRef="Sequence_18">
+                                                    <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'BUTTON  modal-close'" sap2010:WorkflowViewState.IdRef="Click_8" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
                                                       <ui:Click.CursorPosition>
                                                         <ui:CursorPosition Position="Center">
                                                           <ui:CursorPosition.OffsetX>
@@ -552,135 +501,108 @@
                                                       <ui:Click.Target>
                                                         <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="edb7eed86cbdec6e453816a54c080504" Selector="&lt;html title='ACME Products | Pega Studio Training Web Application' /&gt;&lt;webctrl id='modal-close' tag='BUTTON' /&gt;" WaitForReady="INTERACTIVE" />
                                                       </ui:Click.Target>
-                                                      <sap2010:WorkflowViewState.IdRef>Click_8</sap2010:WorkflowViewState.IdRef>
                                                     </ui:Click>
-                                                    <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope - Orders2.xlsx" WorkbookPath="Accessory Files\Orders2.xlsx">
+                                                    <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope - Orders2.xlsx" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_3" WorkbookPath="Accessory Files\Orders2.xlsx">
                                                       <ui:ExcelApplicationScope.Body>
                                                         <ActivityAction x:TypeArguments="ui:WorkbookApplication">
                                                           <ActivityAction.Argument>
                                                             <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
                                                           </ActivityAction.Argument>
-                                                          <Sequence>
-                                                            <Assign>
+                                                          <Sequence sap2010:WorkflowViewState.IdRef="Sequence_17">
+                                                            <Assign sap2010:WorkflowViewState.IdRef="Assign_10">
                                                               <Assign.To>
                                                                 <OutArgument x:TypeArguments="x:String">[writeCellStatus]</OutArgument>
                                                               </Assign.To>
                                                               <Assign.Value>
                                                                 <InArgument x:TypeArguments="x:String">["C" + (dt_Orders.Rows.IndexOf(row) + 2).ToString]</InArgument>
                                                               </Assign.Value>
-                                                              <sap2010:WorkflowViewState.IdRef>Assign_10</sap2010:WorkflowViewState.IdRef>
                                                             </Assign>
-                                                            <ui:LogMessage DisplayName="Log Message - writeCellStatus" Level="Info" Message="[&quot;writeCellStatus retrieved as &quot; + writeCellStatus]" sap2010:WorkflowViewState.IdRef="LogMessage_13" />
-                                                            <Assign>
+                                                            <ui:LogMessage DisplayName="Log Message - writeCellStatus" sap2010:WorkflowViewState.IdRef="LogMessage_13" Level="Info" Message="[&quot;writeCellStatus retrieved as &quot; + writeCellStatus]" />
+                                                            <Assign sap2010:WorkflowViewState.IdRef="Assign_11">
                                                               <Assign.To>
                                                                 <OutArgument x:TypeArguments="x:String">[writeCellNotes]</OutArgument>
                                                               </Assign.To>
                                                               <Assign.Value>
                                                                 <InArgument x:TypeArguments="x:String">["D" + (dt_Orders.Rows.IndexOf(row) + 2).ToString]</InArgument>
                                                               </Assign.Value>
-                                                              <sap2010:WorkflowViewState.IdRef>Assign_11</sap2010:WorkflowViewState.IdRef>
                                                             </Assign>
-                                                            <ui:LogMessage DisplayName="Log Message - writeCellNotes" Level="Info" Message="[&quot;writeCellStatus retrieved as &quot; + writeCellNotes]" sap2010:WorkflowViewState.IdRef="LogMessage_14" />
-                                                            <Sequence DisplayName="Do">
-                                                              <ui:ExcelWriteCell Cell="[writeCellStatus]" DisplayName="Write Cell" SheetName="Orders" Text="Unsuccessful" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_5" />
-                                                              <ui:ExcelWriteCell Cell="[writeCellNotes]" DisplayName="Write Cell" SheetName="Orders" Text="Item is out of stock (zero value). Order was not placed" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_6" />
-                                                              <AddToCollection x:TypeArguments="x:String" Collection="[unsuccessfulOrdersList]" DisplayName="Add To Collection" Item="[pName]" sap2010:WorkflowViewState.IdRef="AddToCollection`1_3" />
-                                                              <sap2010:WorkflowViewState.IdRef>Sequence_16</sap2010:WorkflowViewState.IdRef>
+                                                            <ui:LogMessage DisplayName="Log Message - writeCellNotes" sap2010:WorkflowViewState.IdRef="LogMessage_14" Level="Info" Message="[&quot;writeCellStatus retrieved as &quot; + writeCellNotes]" />
+                                                            <Sequence DisplayName="Do" sap2010:WorkflowViewState.IdRef="Sequence_16">
+                                                              <ui:ExcelWriteCell Cell="[writeCellStatus]" DisplayName="Write Cell" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_5" SheetName="Orders" Text="Unsuccessful" />
+                                                              <ui:ExcelWriteCell Cell="[writeCellNotes]" DisplayName="Write Cell" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_6" SheetName="Orders" Text="Item is out of stock (zero value). Order was not placed" />
+                                                              <AddToCollection x:TypeArguments="x:String" Collection="[unsuccessfulOrdersList]" DisplayName="Add To Collection" sap2010:WorkflowViewState.IdRef="AddToCollection`1_3" Item="[pName]" />
                                                             </Sequence>
-                                                            <sap2010:WorkflowViewState.IdRef>Sequence_17</sap2010:WorkflowViewState.IdRef>
                                                           </Sequence>
                                                         </ActivityAction>
                                                       </ui:ExcelApplicationScope.Body>
-                                                      <sap2010:WorkflowViewState.IdRef>ExcelApplicationScope_3</sap2010:WorkflowViewState.IdRef>
                                                     </ui:ExcelApplicationScope>
-                                                    <sap2010:WorkflowViewState.IdRef>Sequence_18</sap2010:WorkflowViewState.IdRef>
                                                   </Sequence>
                                                 </If.Else>
-                                                <sap2010:WorkflowViewState.IdRef>If_1</sap2010:WorkflowViewState.IdRef>
                                               </If>
-                                              <sap2010:WorkflowViewState.IdRef>Sequence_19</sap2010:WorkflowViewState.IdRef>
                                             </Sequence>
                                           </If.Then>
                                           <If.Else>
-                                            <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope - Orders2.xlsx" WorkbookPath="Accessory Files\Orders2.xlsx">
+                                            <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope - Orders2.xlsx" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_4" WorkbookPath="Accessory Files\Orders2.xlsx">
                                               <ui:ExcelApplicationScope.Body>
                                                 <ActivityAction x:TypeArguments="ui:WorkbookApplication">
                                                   <ActivityAction.Argument>
                                                     <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
                                                   </ActivityAction.Argument>
-                                                  <Sequence>
-                                                    <Assign>
+                                                  <Sequence sap2010:WorkflowViewState.IdRef="Sequence_21">
+                                                    <Assign sap2010:WorkflowViewState.IdRef="Assign_12">
                                                       <Assign.To>
                                                         <OutArgument x:TypeArguments="x:String">[writeCellStatus]</OutArgument>
                                                       </Assign.To>
                                                       <Assign.Value>
                                                         <InArgument x:TypeArguments="x:String">["C" + (dt_Orders.Rows.IndexOf(row) + 2).ToString]</InArgument>
                                                       </Assign.Value>
-                                                      <sap2010:WorkflowViewState.IdRef>Assign_12</sap2010:WorkflowViewState.IdRef>
                                                     </Assign>
-                                                    <ui:LogMessage DisplayName="Log Message - writeCellStatus" Level="Info" Message="[&quot;writeCellStatus retrieved as &quot; + writeCellStatus]" sap2010:WorkflowViewState.IdRef="LogMessage_15" />
-                                                    <Assign>
+                                                    <ui:LogMessage DisplayName="Log Message - writeCellStatus" sap2010:WorkflowViewState.IdRef="LogMessage_15" Level="Info" Message="[&quot;writeCellStatus retrieved as &quot; + writeCellStatus]" />
+                                                    <Assign sap2010:WorkflowViewState.IdRef="Assign_13">
                                                       <Assign.To>
                                                         <OutArgument x:TypeArguments="x:String">[writeCellNotes]</OutArgument>
                                                       </Assign.To>
                                                       <Assign.Value>
                                                         <InArgument x:TypeArguments="x:String">["D" + (dt_Orders.Rows.IndexOf(row) + 2).ToString]</InArgument>
                                                       </Assign.Value>
-                                                      <sap2010:WorkflowViewState.IdRef>Assign_13</sap2010:WorkflowViewState.IdRef>
                                                     </Assign>
-                                                    <ui:LogMessage DisplayName="Log Message - writeCellNotes" Level="Info" Message="[&quot;writeCellStatus retrieved as &quot; + writeCellStatus]" sap2010:WorkflowViewState.IdRef="LogMessage_16" />
-                                                    <Sequence DisplayName="Do">
-                                                      <ui:ExcelWriteCell Cell="[writeCellStatus]" DisplayName="Write Cell" SheetName="Orders" Text="Unsuccessful" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_7" />
-                                                      <ui:ExcelWriteCell Cell="[writeCellNotes]" DisplayName="Write Cell" SheetName="Orders" Text="Item was not found on website. Order was not placed" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_8" />
-                                                      <AddToCollection x:TypeArguments="x:String" Collection="[unsuccessfulOrdersList]" DisplayName="Add To Collection" Item="[pName]" sap2010:WorkflowViewState.IdRef="AddToCollection`1_4" />
-                                                      <sap2010:WorkflowViewState.IdRef>Sequence_20</sap2010:WorkflowViewState.IdRef>
+                                                    <ui:LogMessage DisplayName="Log Message - writeCellNotes" sap2010:WorkflowViewState.IdRef="LogMessage_16" Level="Info" Message="[&quot;writeCellStatus retrieved as &quot; + writeCellStatus]" />
+                                                    <Sequence DisplayName="Do" sap2010:WorkflowViewState.IdRef="Sequence_20">
+                                                      <ui:ExcelWriteCell Cell="[writeCellStatus]" DisplayName="Write Cell" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_7" SheetName="Orders" Text="Unsuccessful" />
+                                                      <ui:ExcelWriteCell Cell="[writeCellNotes]" DisplayName="Write Cell" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_8" SheetName="Orders" Text="Item was not found on website. Order was not placed" />
+                                                      <AddToCollection x:TypeArguments="x:String" Collection="[unsuccessfulOrdersList]" DisplayName="Add To Collection" sap2010:WorkflowViewState.IdRef="AddToCollection`1_4" Item="[pName]" />
                                                     </Sequence>
-                                                    <sap2010:WorkflowViewState.IdRef>Sequence_21</sap2010:WorkflowViewState.IdRef>
                                                   </Sequence>
                                                 </ActivityAction>
                                               </ui:ExcelApplicationScope.Body>
-                                              <sap2010:WorkflowViewState.IdRef>ExcelApplicationScope_4</sap2010:WorkflowViewState.IdRef>
                                             </ui:ExcelApplicationScope>
                                           </If.Else>
-                                          <sap2010:WorkflowViewState.IdRef>If_2</sap2010:WorkflowViewState.IdRef>
                                         </If>
                                         <ui:Continue sap2010:WorkflowViewState.IdRef="Continue_2" />
-                                        <sap2010:WorkflowViewState.IdRef>Sequence_22</sap2010:WorkflowViewState.IdRef>
                                       </Sequence>
                                     </ActivityAction>
-                                    <sap2010:WorkflowViewState.IdRef>Catch`1_2</sap2010:WorkflowViewState.IdRef>
                                   </Catch>
                                 </TryCatch.Catches>
-                                <sap2010:WorkflowViewState.IdRef>TryCatch_1</sap2010:WorkflowViewState.IdRef>
                               </TryCatch>
-                              <sap2010:WorkflowViewState.IdRef>Sequence_23</sap2010:WorkflowViewState.IdRef>
                             </Sequence>
                           </ActivityAction>
                         </ui:ForEach.Body>
-                        <sap2010:WorkflowViewState.IdRef>ForEach`1_1</sap2010:WorkflowViewState.IdRef>
                       </ui:ForEach>
-                      <sap2010:WorkflowViewState.IdRef>FlowStep_7</sap2010:WorkflowViewState.IdRef>
                     </FlowStep>
                   </FlowStep.Next>
-                  <sap2010:WorkflowViewState.IdRef>FlowStep_8</sap2010:WorkflowViewState.IdRef>
                 </FlowStep>
               </Flowchart.StartNode>
               <x:Reference>__ReferenceID7</x:Reference>
               <x:Reference>__ReferenceID8</x:Reference>
-              <sap2010:WorkflowViewState.IdRef>Flowchart_2</sap2010:WorkflowViewState.IdRef>
             </Flowchart>
-            <sap2010:WorkflowViewState.IdRef>FlowStep_9</sap2010:WorkflowViewState.IdRef>
           </FlowStep>
         </FlowStep.Next>
-        <sap2010:WorkflowViewState.IdRef>FlowStep_10</sap2010:WorkflowViewState.IdRef>
       </FlowStep>
     </Flowchart.StartNode>
     <x:Reference>__ReferenceID9</x:Reference>
     <x:Reference>__ReferenceID10</x:Reference>
-    <sap2010:WorkflowViewState.IdRef>Flowchart_3</sap2010:WorkflowViewState.IdRef>
-    <sads:DebugSymbol.Symbol>d1tDOlxyZXZhdHVyZVxVaXBhdGggUHJvY2Vzc2VzXFByb2plY3RUd29SZXBvc2l0b3J5XEhhbnNlbkJlYXVQcm9qZWN0MlxQbGFjZU9yZGVyc1RvUGVnYS54YW1sxQFHA6oFDwIBAUoJlwEUAwHiAZoBDZ8FGQIBAk4LYx0DAfcBZAtpIAMB8gFqC4UBEwMB5QGGAQuVARYDAeMBoAET1gEjAwHhAdkBF5UFJAIBA07tAU6xAgMB/QFUEV8cAwH4AWaJAWaQAgMB9gFmmwJmoQIDAfUBZFNkYAMB8wFrDYMBGAMB6AFqS2pYAwHmAZIBngGSAZICAwHkAdkBiQHZAbUBAwHgAd8BHZEFKAIBBFUTXR4DAfkBbA97GgMB7gF8D4EBJAMB6QHlAR/tASgDAdwB7gEf7gHBAQMB2QHvAR/3ASgDAdUB+AEf+AHKAQMB0wH5AR+BAigDAc4BggIfggLrAQMBygGDAh+LAigDAcUBjAIfjwUqAgEFWqYBWtgBAwH8AVc/V0MDAfsBVzJXNgMB+gF4jQF4lAIDAfEBbFFsVwMB8AF4nwJ4pQIDAe8Bfo0BfpQCAwHtAX6fAn6lAgMB7AF8V3xkAwHqAeoBSuoBWwMB3wHnAUvnAVIDAd0B7gFl7gGPAQMB2gH0AVH0AWIDAdgB8QFS8QFcAwHWAfgBaPgBmAEDAdQB+wFL+wFZAwHPAYICbYICuQEDAcsBhQJLhQJeAwHGAZICI4oDLgMBqAGSAyfDAzIDAYIBzAMniQUyAgEGkwIliAMxAwGpAZMDKZYDNAMBpQGXAynAA0QDAYQBwQMpwQNlAwGDAdADKdADygIDAYAB0QMp2QM7AgF72gMp2gPhAQIBeNsDKYYFLgIBCIcFKYcFZQIBB5YCVZYCWAMBqgGaAiu3AjsDAb8BugIvwgJBAwG6AcUCM8UC6AEDAbgBxwJlxwKqAQMBtwHfAjvnAkQDAbIB6gI/6gKBAgMBrwHKAjvZAkYDAasBlAMrlAO6AgMBpgGXA4oBlwOoAQMBpAGdAy+8AzoDAYUB0AOdAdADmAIDAYEB0QNf0QNkAgF+0wNV0wNkAgF81gO8AdYDhQMCAX/aA3faA64BAgF52wM32wNsAgEJ3QMt2gQ4AgEs3QQtgwVIAgELmgJ3mgJ8AwHBAZoCxgGaAtIBAwHAAbQCqQG0ArkBAwHDAbQCxAG0AssBAwHCAboCZboCcwMBvQG8AmK8AnADAbsBvwLCAb8CwgIDAb4BxQKAAcUCtgEDAbkB5AJl5AJ7AwG1AeECZuECeAMBswHqApAB6gLPAQMBsAHWArkB1gLOAQMBrQHWAtkB1gLfAQMBrAGUA5YBlAOIAgMBpwGhAzGpAzoDAaABqgMxqgPyAQMBnQGrAzGzAzoDAZkBtAMxtAPxAQMBlgG1AzG6AzwDAYYB3gMv2AQ0AgEt3QSdAd0EuwECASvjBDP/BD4CAQymA1ymA44BAwGjAaMDXaMDbgMBoQGqA4EBqgPAAQMBngGwA1ywA44BAwGcAa0DXa0DbQMBmgG0A4ABtAO/AQMBlwG2AzO2A9QBAwGRAbcDM7cD+gEDAYwBuAMzuAPsAQMBhwHeAz3eA28CAS7gAzOZBD4CAVScBDPVBD4CATDkBDXsBD4CASftBDXtBPcBAgEk7gQ19gQ+AgEg9wQ19wT2AQIBHfgENf0EQAIBDbYDS7YDXgMBlAG2A5ABtgOeAQMBkwG2A4IBtgOKAQMBkgG3A0u3A10DAY8BtwOPAbcDxAEDAY4BtwOBAbcDiQEDAY0BuANquAOEAQMBigG4A6oBuAOzAQMBiAHhAzXwA0ACAXbxAzWXBFACAVWdBDWsBEACAVKtBDXTBFACATHpBGDpBJIBAgEq5gRh5gRyAgEo7QSFAe0ExAECASXzBGDzBJIBAgEj8ARh8ARxAgEh9wSEAfcEwwECAR75BDf5BNgBAgEY+gQ3+gT+AQIBE/sEN/sE8AECAQ7tA8gB7QP/AgIBd/EDpQHxA8MBAgF19wM7kwRGAgFWqQTIAakExAICAVOtBKUBrQTDAQIBUbMEO88ERgIBMvkET/kEYgIBG/kElAH5BKIBAgEa+QSGAfkEjgECARn6BE/6BGECARb6BJMB+gTIAQIBFfoEhQH6BI0BAgEU+wRu+wSIAQIBEfsErgH7BLcBAgEP+AM9gARGAgFxgQQ9gQT/AQIBboIEPYoERgIBaosEPYsE/QECAWeMBD2RBEgCAVe0BD28BEYCAU29BD29BP8BAgFKvgQ9xgRGAgFGxwQ9xwT9AQIBQ8gEPc0ESAIBM/0DaP0DmgECAXT6A2n6A3oCAXKBBI0BgQTMAQIBb4cEaIcEmgECAW2EBGmEBHkCAWuLBIwBiwTKAQIBaI0EP40E4AECAWKOBD+OBI4CAgFdjwQ/jwT4AQIBWLkEaLkEmgECAVC2BGm2BHoCAU69BI0BvQTMAQIBS8MEaMMEmgECAUnABGnABHkCAUfHBIwBxwTKAQIBRMkEP8kE4AECAT7KBD/KBIoCAgE5ywQ/ywT4AQIBNI0EV40EagIBZY0EnAGNBKoBAgFkjQSOAY0ElgECAWOOBFeOBGkCAWCOBJsBjgTYAQIBX44EjQGOBJUBAgFejwR2jwSQAQIBW48EtgGPBL8BAgFZyQRXyQRqAgFByQScAckEqgECAUDJBI4ByQSWAQIBP8oEV8oEaQIBPMoEmwHKBNQBAgE7ygSNAcoElQECATrLBHbLBJABAgE3ywS2AcsEvwECATU=</sads:DebugSymbol.Symbol>
+    <sads:DebugSymbol.Symbol>d1tDOlxyZXZhdHVyZVxVaXBhdGggUHJvY2Vzc2VzXFByb2plY3RUd29SZXBvc2l0b3J5XEhhbnNlbkJlYXVQcm9qZWN0MlxQbGFjZU9yZGVyc1RvUGVnYS54YW1sxQFIA90EDwIBAUsJjgEUAwHiAZEBDdUEGQIBAk8LYR0DAfcBYgtmIAMB8gFnC34TAwHlAX8LjQEWAwHjAZcBE8QBIwMB4QHHARfOBCQCAQNPngJP4gIDAf0BVRFeHAMB+AFkiQFkkAIDAfYBZJsCZKECAwH1AWJTYmADAfMBaA19GAMB6AFndWeCAQMB5gGLAZ4BiwGSAgMB5AHHAbcBxwHjAQMB4AHNAR3LBCgCAQRWE10eAwH5AWkPdxoDAe4BeA98JAMB6QHTAR/aASgDAdwB2wEf2wHBAQMB2QHcAR/jASgDAdUB5AEf5AHKAQMB0wHlAR/sASgDAc4B7QEf7QHrAQMBygHuAR/1ASgDAcUB9gEfygQqAgEFW6YBW9gBAwH8AVg/WEMDAfsBWDJYNgMB+gF1jQF1lAIDAfEBaVFpVwMB8AF1nwJ1pQIDAe8Beo0BepQCAwHtAXqfAnqlAgMB7AF4V3hkAwHqAdgBStgBWwMB3wHVAUvVAVIDAd0B2wGUAdsBvgEDAdoB4QFR4QFiAwHYAd4BUt4BXAMB1gHkAZcB5AHHAQMB1AHnAUvnAVkDAc8B7QGcAe0B6AEDAcsB8AFL8AFeAwHGAfwBI+cCLgMBqAHvAieZAzIDAYIBoQMnxgQyAgEG/QEl5gIxAwGpAfACKfICNAMBpQHzAimXA0QDAYQBmAMpmANlAwGDAaUDKaUDygIDAYABpgMprQM7AgF7rgMprgPhAQIBeK8DKcQELgIBCMUEKcUEZQIBB4ACVYACWAMBqgGEAiugAjsDAb8BowIvqgJBAwG6Aa0CM60C6AEDAbgBrwJlrwKqAQMBtwHFAjvMAkQDAbIBzwI/zwKBAgMBrwGyAjvAAkYDAasB8QIr8QK6AgMBpgHzAsQB8wLiAQMBpAH5Ai+UAzoDAYUBpQPMAaUDxwIDAYEBpgNfpgNkAgF+qANVqANkAgF8qwO8AasDhQMCAX+uA6cBrgPeAQIBea8DN68DbAIBCbEDLZ4EOAIBLKEELcIESAIBC4QCd4QCfAMBwQGEAvUBhAKBAgMBwAGeAqkBngK5AQMBwwGeAsQBngLLAQMBwgGjAmWjAnMDAb0BpQJipQJwAwG7AagCwgGoAsICAwG+Aa0CrwGtAuUBAwG5AcoCZcoCewMBtQHHAmbHAngDAbMBzwK/Ac8C/gEDAbABvgK5Ab4CzgEDAa0BvgLZAb4C3wEDAawB8QLFAfECtwIDAacB/QIxhAM6AwGgAYUDMYUD8gEDAZ0BhgMxjQM6AwGZAY4DMY4D8QEDAZYBjwMxkwM8AwGGAbIDL50ENAIBLaEE1wGhBPUBAgErpwQzvwQ+AgEMggNcggOOAQMBowH/Al3/Am4DAaEBhQOwAYUD7wEDAZ4BiwNciwOOAQMBnAGIA12IA20DAZoBjgOvAY4D7gEDAZcBkAMzkAPUAQMBkQGRAzORA/oBAwGMAZIDM5ID7AEDAYcBsgM9sgNvAgEutAMz5gM+AgFU6QMzmwQ+AgEwqAQ1rwQ+AgEnsAQ1sAT3AQIBJLEENbgEPgIBILkENbkE9gECAR26BDW+BEACAQ2QA0uQA14DAZQBkAPDAZAD0QEDAZMBkAO1AZADvQEDAZIBkQNLkQNdAwGPAZEDwgGRA/cBAwGOAZEDtAGRA7wBAwGNAZIDapIDhAEDAYoBkgPgAZID6QEDAYgBtQM1wwNAAgF2xAM15QNQAgFV6gM1+ANAAgFS+QM1mgRQAgExrQRgrQSSAQIBKqoEYaoEcgIBKLAEtQGwBPQBAgEltgRgtgSSAQIBI7MEYbMEcQIBIbkEtAG5BPMBAgEeuwQ3uwTYAQIBGLwEN7wE/gECARO9BDe9BPABAgEOwQPIAcED/wICAXfEA98BxAP9AQIBdcoDO+IDRgIBVvYDyAH2A8QCAgFT+QPfAfkD/QECAVH/AzuXBEYCATK7BE+7BGICARu7BMcBuwTVAQIBGrsEuQG7BMEBAgEZvARPvARhAgEWvATGAbwE+wECARW8BLgBvATAAQIBFL0Ebr0EiAECARG9BOQBvQTtAQIBD8sDPdIDRgIBcdMDPdMD/wECAW7UAz3bA0YCAWrcAz3cA/0BAgFn3QM94QNIAgFXgAQ9hwRGAgFNiAQ9iAT/AQIBSokEPZAERgIBRpEEPZEE/QECAUOSBD2WBEgCATPQA2jQA5oBAgF0zQNpzQN6AgFy0wO9AdMD/AECAW/ZA2jZA5oBAgFt1gNp1gN5AgFr3AO8AdwD+gECAWjeAz/eA+ABAgFi3wM/3wOOAgIBXeADP+AD+AECAViFBGiFBJoBAgFQggRpggR6AgFOiAS9AYgE/AECAUuOBGiOBJoBAgFJiwRpiwR5AgFHkQS8AZEE+gECAUSTBD+TBOABAgE+lAQ/lASKAgIBOZUEP5UE+AECATTeA1feA2oCAWXeA88B3gPdAQIBZN4DwQHeA8kBAgFj3wNX3wNpAgFg3wPOAd8DiwICAV/fA8AB3wPIAQIBXuADduADkAECAVvgA+wB4AP1AQIBWZMEV5MEagIBQZMEzwGTBN0BAgFAkwTBAZMEyQECAT+UBFeUBGkCATyUBM4BlASHAgIBO5QEwAGUBMgBAgE6lQR2lQSQAQIBN5UE7AGVBPUBAgE1</sads:DebugSymbol.Symbol>
   </Flowchart>
-  <sap2010:WorkflowViewState.IdRef>PlaceOrdersToPega_1</sap2010:WorkflowViewState.IdRef>
   <sap2010:WorkflowViewState.ViewStateManager>
     <sap2010:ViewStateManager>
       <sap2010:ViewStateData Id="Click_1" sap:VirtualizedContainerService.HintSize="314.4,107.2" />
@@ -744,13 +666,13 @@
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
       <sap2010:ViewStateData Id="CommentOut_1" sap:VirtualizedContainerService.HintSize="200,52.8" />
-      <sap2010:ViewStateData Id="Assign_1" sap:VirtualizedContainerService.HintSize="457.6,60" />
-      <sap2010:ViewStateData Id="LogMessage_1" sap:VirtualizedContainerService.HintSize="457.6,92.8" />
-      <sap2010:ViewStateData Id="Assign_2" sap:VirtualizedContainerService.HintSize="457.6,60" />
-      <sap2010:ViewStateData Id="LogMessage_2" sap:VirtualizedContainerService.HintSize="457.6,92.8" />
-      <sap2010:ViewStateData Id="Assign_3" sap:VirtualizedContainerService.HintSize="457.6,60" />
-      <sap2010:ViewStateData Id="LogMessage_3" sap:VirtualizedContainerService.HintSize="457.6,92.8" />
-      <sap2010:ViewStateData Id="Assign_4" sap:VirtualizedContainerService.HintSize="457.6,60" />
+      <sap2010:ViewStateData Id="Assign_1" sap:VirtualizedContainerService.HintSize="414.4,60" />
+      <sap2010:ViewStateData Id="LogMessage_1" sap:VirtualizedContainerService.HintSize="414.4,92.8" />
+      <sap2010:ViewStateData Id="Assign_2" sap:VirtualizedContainerService.HintSize="414.4,60" />
+      <sap2010:ViewStateData Id="LogMessage_2" sap:VirtualizedContainerService.HintSize="414.4,92.8" />
+      <sap2010:ViewStateData Id="Assign_3" sap:VirtualizedContainerService.HintSize="414.4,60" />
+      <sap2010:ViewStateData Id="LogMessage_3" sap:VirtualizedContainerService.HintSize="414.4,92.8" />
+      <sap2010:ViewStateData Id="Assign_4" sap:VirtualizedContainerService.HintSize="414.4,60" />
       <sap2010:ViewStateData Id="SelectItem_1" sap:VirtualizedContainerService.HintSize="200,52.8" />
       <sap2010:ViewStateData Id="GetAttribute_1" sap:VirtualizedContainerService.HintSize="200,52.8" />
       <sap2010:ViewStateData Id="LogMessage_4" sap:VirtualizedContainerService.HintSize="200,52.8" />
@@ -890,10 +812,10 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
-      <sap2010:ViewStateData Id="Catch`1_1" sap:VirtualizedContainerService.HintSize="443.2,1618.4">
+      <sap2010:ViewStateData Id="Catch`1_1" sap:VirtualizedContainerService.HintSize="403.2,22.4">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
@@ -1000,14 +922,7 @@
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
       <sap2010:ViewStateData Id="Continue_2" sap:VirtualizedContainerService.HintSize="314.4,22.4" />
-      <sap2010:ViewStateData Id="Sequence_22" sap:VirtualizedContainerService.HintSize="336.8,680.8">
-        <sap:WorkflowViewStateService.ViewState>
-          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-          </scg:Dictionary>
-        </sap:WorkflowViewStateService.ViewState>
-      </sap2010:ViewStateData>
-      <sap2010:ViewStateData Id="Catch`1_2" sap:VirtualizedContainerService.HintSize="443.2,22.4">
+      <sap2010:ViewStateData Id="Sequence_22" sap:VirtualizedContainerService.HintSize="336.8,52.8">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -1015,15 +930,23 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
-      <sap2010:ViewStateData Id="TryCatch_1" sap:VirtualizedContainerService.HintSize="457.6,1806.4" />
-      <sap2010:ViewStateData Id="Sequence_23" sap:VirtualizedContainerService.HintSize="480,2729.6">
+      <sap2010:ViewStateData Id="Catch`1_2" sap:VirtualizedContainerService.HintSize="403.2,22.4">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="TryCatch_1" sap:VirtualizedContainerService.HintSize="417.6,432" />
+      <sap2010:ViewStateData Id="Sequence_23" sap:VirtualizedContainerService.HintSize="436.8,1862.4">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
-      <sap2010:ViewStateData Id="ForEach`1_1" sap:VirtualizedContainerService.HintSize="496,2864" />
+      <sap2010:ViewStateData Id="ForEach`1_1" sap:VirtualizedContainerService.HintSize="452.8,1996.8" />
       <sap2010:ViewStateData Id="FlowStep_7">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -1080,7 +1003,7 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
-      <sap2010:ViewStateData Id="PlaceOrdersToPega_1" sap:VirtualizedContainerService.HintSize="1360.8,756.8" />
+      <sap2010:ViewStateData Id="PlaceOrdersToPega_1" sap:VirtualizedContainerService.HintSize="1360.8,716.8" />
     </sap2010:ViewStateManager>
   </sap2010:WorkflowViewState.ViewStateManager>
 </Activity>
